@@ -236,6 +236,21 @@ wire    [31:0]  flash_mem_readdata;
 wire            flash_mem_readdatavalid;
 wire    [3:0]   flash_mem_byteenable;
 
+logic[15:0] odata /* synthesis keep */;
+
+music_fetcher m_fetch_inst (
+    .clk_27(TD_CLK27),
+    .clk_50(CLK_50M),
+    .rst(~KEY[3]),
+    .flash_mem_read(flash_mem_read),
+    .flash_mem_waitrequest(flash_mem_waitrequest),
+    .flash_mem_address(flash_mem_address),
+    .flash_mem_readdata(flash_mem_readdata),
+    .flash_mem_readdatavalid(flash_mem_readdatavalid),
+    .flash_mem_byteenable(flash_mem_byteenable),
+    .audio_data(odata)
+);
+
 
 flash flash_inst (
     .clk_clk                 (CLK_50M),

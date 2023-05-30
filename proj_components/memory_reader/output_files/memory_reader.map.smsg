@@ -1,0 +1,1 @@
+Info (10281): Verilog HDL Declaration information at memory_reader.sv(4): object "read" differs only in case from object "READ" in the same scope File: C:/Users/beako/Documents/cpen311/cpen311-lab2/proj_components/memory_reader/memory_reader.sv Line: 4
