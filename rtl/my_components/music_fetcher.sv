@@ -11,16 +11,16 @@ module music_fetcher (
     output logic    [15:0]  audio_data
 );
 
-    logic[26:0] state;
+    logic[25:0] state;
 
     parameter READY = 3'b000;
     parameter FETCH = 3'b001;
     parameter WAIT = 3'b010;
     parameter SET = 3'b100;
 
-    assign flash_mem_address = state[26:3];
-    /* state[2:1] is an identifier*/
-    assign flash_mem_read = state[0];
+    assign flash_mem_address = state[25:3];     /* 23 bits */
+    /* state[2:1] is an identifier*/            /* 2 bits */
+    assign flash_mem_read = state[0];           /* 1 bit  */
     
     assign flash_mem_byteenable = 4'b0000;
 
@@ -52,13 +52,11 @@ module music_fetcher (
         if(rst) state <= {{23{1'b0}}, READY};
         else begin
             case(state[2:0])
-                READY: state <= synced & ~flash_mem_waitrequest ? {state[26:3], FETCH}: {state[26:3], READY};
-                FETCH: state <= {state[26:3], WAIT};
-                WAIT: state <= flash_mem_readdatavalid ? {state[26:3], SET} : {state[26:3], WAIT};
-                SET: 
-                begin
-                    state <= {(state[26:3] + 1), READY};
-                    audio_data <= state[3] ? flash_mem_readdata[31:16] : flash_mem_readdata[15:0];
+                READY: state <= (synced & ~flash_mem_waitrequest) ? {state[25:3], FETCH}: {state[25:3], READY};
+                FETCH: state <= {state[25:3], WAIT};
+                WAIT:begin 
+                    state <= flash_mem_readdatavalid ? {(state[25:3] + 1), READY} : {state[25:3], WAIT};
+                    audio_data <= flash_mem_readdata[15:0];
                 end
                 default: state <= {{23{1'b0}}, READY};
             endcase

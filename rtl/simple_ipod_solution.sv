@@ -271,7 +271,7 @@ assign Sample_Clk_Signal = Clock_1KHz;
 
 //Audio Generation Signal
 //Note that the audio needs signed data - so convert 1 bit to 8 bits signed
-wire [7:0] audio_data = {~Sample_Clk_Signal,{7{Sample_Clk_Signal}}}; //generate signed sample audio signal
+wire [7:0] audio_data = {odata[15:8]}; //generate signed sample audio signal
 
 
 
