@@ -241,7 +241,10 @@ logic[15:0] odata /* synthesis keep */;
 music_fetcher m_fetch_inst (
     .clk_27(TD_CLK27),
     .clk_50(CLK_50M),
-    .rst(~KEY[3]),
+    .rst(m_fetch_reset),
+    .sample_freq_div(m_fetch_div),
+    .forward(m_fetch_forward),
+    .paused(m_fetch_pause),
     .flash_mem_read(flash_mem_read),
     .flash_mem_waitrequest(flash_mem_waitrequest),
     .flash_mem_address(flash_mem_address),
@@ -251,6 +254,22 @@ music_fetcher m_fetch_inst (
     .audio_data(odata)
 );
 
+logic [31:0] 	m_fetch_div;
+logic 			m_fetch_forward;
+logic 			m_fetch_pause;
+logic 			m_fetch_reset;
+
+fetcher_controller controller_inst
+(
+    .clk(CLK_50M),
+    .scan_code(kbd_scan_code),
+    .kbd_data_ready(kbd_data_ready),
+    .rst(~KEY[3]),
+    .sample_freq_div(m_fetch_div),
+    .forward(m_fetch_forward),
+    .pause(m_fetch_pause),
+    .fetcher_reset(m_fetch_reset)
+);
 
 flash flash_inst (
     .clk_clk                 (CLK_50M),
