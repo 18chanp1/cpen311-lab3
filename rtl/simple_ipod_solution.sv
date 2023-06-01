@@ -226,9 +226,6 @@ wire Sample_Clk_Signal;
 //
 //
 
-
-
-
 wire            flash_mem_read;
 wire            flash_mem_waitrequest;
 wire    [22:0]  flash_mem_address;
@@ -236,8 +233,12 @@ wire    [31:0]  flash_mem_readdata;
 wire            flash_mem_readdatavalid;
 wire    [3:0]   flash_mem_byteenable;
 
+/* data from memory  */
 logic[15:0] odata /* synthesis keep */;
 
+//TODO Add LED code and check scope
+
+//fetches music from memory
 music_fetcher m_fetch_inst (
     .clk_27(TD_CLK27),
     .clk_50(CLK_50M),
@@ -254,11 +255,13 @@ music_fetcher m_fetch_inst (
     .audio_data(odata)
 );
 
+/* control signals for music_fetcher */
 logic [31:0] 	m_fetch_div;
 logic 			m_fetch_forward;
 logic 			m_fetch_pause;
 logic 			m_fetch_reset;
 
+//instantiate controller to control music_fetcher
 fetcher_controller controller_inst
 (
     .clk(CLK_50M),
@@ -291,9 +294,8 @@ flash flash_inst (
 
 assign Sample_Clk_Signal = Clock_1KHz;
 
-//Audio Generation Signal
-//Note that the audio needs signed data - so convert 1 bit to 8 bits signed
-wire [7:0] audio_data = {odata[15:8]}; //generate signed sample audio signal
+//Audio Generation Signal - direct from memory.
+wire [7:0] audio_data = {odata[15:8]}; 
 
 
 

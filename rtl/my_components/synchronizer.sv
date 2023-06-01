@@ -1,8 +1,9 @@
+/* Synchronizes a pulse from insignal*/
 module synchronizer 
 (
-    input logic insignal,
-    input logic clk,
-    output logic synced
+    input logic insignal,   /* asynchronous pulse*/
+    input logic clk,        /* clock which to align to*/
+    output logic synced     /* synchronized pulse*/
 );
 
 	logic pulse;
