@@ -238,7 +238,7 @@ logic[15:0] odata /* synthesis keep */;
 
 //TODO Add LED code and check scope
 
-//fetches music from memory
+//FSM fetches music from memory
 music_fetcher m_fetch_inst (
     .clk_27(TD_CLK27),
     .clk_50(CLK_50M),
