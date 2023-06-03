@@ -4,8 +4,11 @@
 module fetcher_controller
 #(
     parameter DEFAULT_FREQ_DIV = 32'd1227, /* Default number of times sampling period fits into 27Mhz */
-    parameter DEFAULT_PAUSE = 1'B1,         /* Default pause status */
-    parameter DEFAULT_FORWARD = 1'B1,       /* Default forward/backward playing status */
+    parameter PAUSE = 1'B0,         /* Default pause status */
+    parameter CONTINUE = 1'B1,
+    parameter FORWARD = 1'B0,
+    parameter BACKWARD = 1'B1,
+    parameter RESET = 1'b1,
     parameter FREQ_DIV_WIDTH = 32,          /* Do not change. Bit width for frequency divider*/
 
     parameter D = 8'h23,                    /*PS2 Scan codes for letters*/
@@ -37,17 +40,17 @@ module fetcher_controller
 
     always_ff @(posedge clk) begin
         if (rst) begin
-            /* Same as initialization */
+            /*Default is paused, forward, not reset*/
             state <= 35'b0;
         end
         else if (kbd_data_ready)begin
             state[0] <= 1'b0;
             case(scan_code)
-                D: state[2] <= 1'b0; //pause
-                E: state[2] <= 1'b1; //continue
-                F: state[1] <= 1'b0;  //forward
-                B: state[1] <= 1'b1; // backward
-                R: state[0] <= 1'b1; //reset
+                D: state[2] <= PAUSE;
+                E: state[2] <= CONTINUE;
+                F: state[1] <= FORWARD;
+                B: state[1] <= BACKWARD;
+                R: state[0] <= RESET; //reset
             endcase
         end 
         else if(speed_reset_event)      state[34:3] <= 32'b0;
