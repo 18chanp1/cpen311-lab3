@@ -12,19 +12,22 @@ module music_fetcher
     parameter SONG_ADDR_MAX = 20'h7FFFF         /*Highest address of song*/
 )
 (
+    /* Control Inputs */
     input logic                                 clk_27,                     /*Other clock at which song is sampled*/
     input logic                                 clk_50,                     /*Clock at which the module runs at*/    
-    input logic                                 rst,                        /* reset. Will be synchronized by synchronizer*/
-	input logic    [31:0]						sample_freq_div,            /*Sampling frequency divisor. How many times does sampling freq fit into clk_27*/
+    input logic                                 rst,                        /*Synchronized*/
     input logic                                 forward,                    /* Direction of music playback. 1 for forward, 0 for backward */
     input logic                                 paused,                     /* 1 is paused, 0 is playing*/
-    input logic                                 restart,                    /* Restarts it on posedge*/
-    output logic                                flash_mem_read,             /* Avalon bus. Please see documentation */
-    input  logic                                flash_mem_waitrequest,
-    output logic    [ADDR_WIDTH - 1:0]          flash_mem_address,
-    input  logic    [DATA_WIDTH - 1:0]          flash_mem_readdata,
+    input logic    [31:0]						sample_freq_div,            /*Sampling frequency divisor. How many times does sampling freq fit into clk_27*/
+    /* Inputs from flash*/
     input  logic                                flash_mem_readdatavalid,
+    input  logic                                flash_mem_waitrequest,
+    input  logic    [DATA_WIDTH - 1:0]          flash_mem_readdata,
+    /* Ouputs to flash */
+    output logic                                flash_mem_read,             /* Avalon bus. Please see documentation */
     output logic    [BYTEENABLE_WIDTH - 1:0]    flash_mem_byteenable,
+    output logic    [ADDR_WIDTH - 1:0]          flash_mem_address,
+    /* Audio data output*/
     output logic    [AUDIO_DATA_WIDTH - 1:0]    audio_data                  /* Audio data output */
     /* All outputs are synchronized to clk_50. */
 );

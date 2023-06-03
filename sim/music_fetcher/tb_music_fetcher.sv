@@ -27,7 +27,6 @@ module tb_music_fetcher();
         .rst(rst),
         .forward(forward),
         .paused(paused),
-        .restart(restart),
         .sample_freq_div(sample_freq_div),
 
         .flash_mem_waitrequest(flash_mem_waitrequest),
