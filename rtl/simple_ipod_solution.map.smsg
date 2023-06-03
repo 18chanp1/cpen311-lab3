@@ -1,1 +1,2 @@
-Info (10281): Verilog HDL Declaration information at memory_reader.sv(4): object "read" differs only in case from object "READ" in the same scope File: C:/Users/beako/Documents/cpen311/cpen311-lab2/rtl/memory_reader.sv Line: 4
+Info (10281): Verilog HDL Declaration information at fetcher_controller.sv(7): object "PAUSE" differs only in case from object "pause" in the same scope File: C:/Users/beako/Documents/cpen311/cpen311-lab2/rtl/my_components/fetcher_controller.sv Line: 7
+Info (10281): Verilog HDL Declaration information at fetcher_controller.sv(9): object "FORWARD" differs only in case from object "forward" in the same scope File: C:/Users/beako/Documents/cpen311/cpen311-lab2/rtl/my_components/fetcher_controller.sv Line: 9

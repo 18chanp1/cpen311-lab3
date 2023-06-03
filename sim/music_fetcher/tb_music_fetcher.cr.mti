@@ -12,6 +12,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	music_fetcher
 
+} {} {}} C:/Users/beako/Documents/cpen311/cpen311-lab2/sim/music_fetcher/tb_music_fetcher.sv {1 {vlog -work work -sv -stats=none C:/Users/beako/Documents/cpen311/cpen311-lab2/sim/music_fetcher/tb_music_fetcher.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb_music_fetcher
+
+Top level modules:
+	tb_music_fetcher
+
 } {} {}} C:/Users/beako/Documents/cpen311/cpen311-lab2/sim/music_fetcher/synchronizer.sv {1 {vlog -work work -sv -stats=none C:/Users/beako/Documents/cpen311/cpen311-lab2/sim/music_fetcher/synchronizer.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module synchronizer

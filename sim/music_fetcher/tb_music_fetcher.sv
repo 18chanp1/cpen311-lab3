@@ -108,8 +108,8 @@ module tb_music_fetcher();
         paused  = 1'b0;
 
 
-        for (int i = 0; i < 10; i++) begin
-            testMem(65536 + i);
+        for (int i = 0; i < 5; i++) begin
+            testMem((i << 16) +i);
         end 
 
         /* Test Pause */
