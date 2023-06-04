@@ -290,12 +290,17 @@ flash flash_inst (
     .flash_mem_readdatavalid (flash_mem_readdatavalid),
     .flash_mem_byteenable    (flash_mem_byteenable)
 );
-            
 
+/* Add LED Flasher*/
+
+led_flasher flasher_inst(.clk (CLK_50M), .rst(~KEY[3]), .outLED(LED[7:0]));
+            
 assign Sample_Clk_Signal = Clock_1KHz;
 
 //Audio Generation Signal - direct from memory.
-wire [7:0] audio_data = {odata[15:8]}; 
+
+/* Try expanding to 16 bit*/
+wire [15:0] audio_data = odata; 
 
 
 

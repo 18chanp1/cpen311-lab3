@@ -79,7 +79,7 @@ module fetcher_controller
                 E: state <= {CONTINUE, state[1:0]};
                 F: state <= {state[2], FORWARD, state[0]};
                 B: state <= {state[2], BACKWARD, state[0]};
-                R: state[0] <= {state[2:1], RESET};
+                R: state <= {state[2:1], RESET};
             endcase
         end  
         else state[0] <= 1'b0;
@@ -91,7 +91,7 @@ module fetcher_controller
         if(rst) begin
             speed <= {FREQ_DIV_WIDTH{1'b0}};
         end
-        else if(sync_rst_e)      speed <= 32'b0;
+        else if(sync_rst_e)           speed <= 32'b0;
         else if(sync_spdup_e)         speed <= speed - 1; 
         else if (sync_spddown_e)      speed <= speed + 1;
         else speed <= speed;

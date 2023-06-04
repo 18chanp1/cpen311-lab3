@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSEMA5F31) Path("C:/Users/beako/Documents/cpen311/cpen311-lab2/rtl/") File("simple_ipod_solution.sof") MfrSpec(OpMask(1) SEC_Device(EPCS128) Child_OpMask(1 0));
+		Device PartName(5CSEMA5F31) Path("C:/Users/beako/Documents/cpen311/cpen311-lab2/ref-docs/") File("simple_ipod_solution.sof") MfrSpec(OpMask(1) SEC_Device(EPCS128) Child_OpMask(1 0));
 
 ChainEnd;
 
