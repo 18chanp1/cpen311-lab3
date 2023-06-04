@@ -75,3 +75,8 @@ How to customize your songs?
 6. Add the Hex file in, the device, and generate.
 7. Use JIC file as ususal
 
+Some extra songs are in extra_songs
+
+
+RTL_44 contains the version that works with 44KHz 8 bit samples. 
+
