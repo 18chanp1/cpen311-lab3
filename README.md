@@ -61,6 +61,9 @@ A waves.do file is included so you can see the waves as I intended. There are al
 
 A vsim.wlf is included so you can load the simulations in if you don't want to simulate them again. 
 
+## FSM Diagrams
+[./doc/FSMs](./doc/FSMs), or see PDF version below.
+
 ## Additional Information
 How to customize your songs?
 
@@ -71,3 +74,4 @@ How to customize your songs?
 5. Set EPCS128
 6. Add the Hex file in, the device, and generate.
 7. Use JIC file as ususal
+
