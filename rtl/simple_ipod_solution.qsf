@@ -1005,7 +1005,6 @@ set_global_assignment -name QXP_FILE async_trap_and_reset.qxp
 set_global_assignment -name SDC_FILE timing_constraints.sdc
 set_global_assignment -name SYSTEMVERILOG_FILE my_components/freq_divider.sv
 set_global_assignment -name SYSTEMVERILOG_FILE my_components/music_fetcher.sv
-set_global_assignment -name SIGNALTAP_FILE stp1.stp
 set_global_assignment -name SYSTEMVERILOG_FILE my_components/synchronizer.sv
 set_global_assignment -name SYSTEMVERILOG_FILE my_components/fetcher_controller.sv
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[4] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
