@@ -236,8 +236,6 @@ wire    [3:0]   flash_mem_byteenable;
 /* data from memory  */
 logic[15:0] odata /* synthesis keep */;
 
-//TODO Add LED code and check scope
-
 //FSM fetches music from memory
 music_fetcher m_fetch_inst (
     .clk_27(TD_CLK27),

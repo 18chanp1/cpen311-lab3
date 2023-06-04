@@ -46,12 +46,11 @@ module music_fetcher
     localparam INCREMENT =      4'b11_00;
     localparam DECREMENT =      4'b10_00;
 	 
-	 logic pause_state;
 
     /* FSM Outputs */
     assign flash_mem_address = state[STATE_WIDTH - 1:FSM_OUT_WIDTH];    /* 23 bits */
     /* state[3:2] uniquely identifies state*/                           /* 2 bits */
-    assign pause_state = ~state[1];                                     /* 1 bit  */
+    /* ~state[1] determines whether music is being paused          	    /* 1 bit  */                                     /* 1 bit  */
     assign flash_mem_read = state[0];                                   /* 1 bit  */
     
     assign flash_mem_byteenable = 4'b0000;

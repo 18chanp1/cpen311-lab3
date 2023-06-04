@@ -1,0 +1,22 @@
+{
+	"system" : {
+		"platform" : "windows64",
+		"os_name" : "Windows 10",
+		"os_version" : "10.0"
+	},
+	"error" : {
+		"executable" : "quartus_fit",
+		"comment" : "not_applicable",
+		"error_message" : "Error in merging. Locked bit differs",
+		"source_file" : "/quartus/db/cut/cut_lcell_util.cpp",
+		"line" : "7104",
+		"stack_trace" : "\t0x7ffb659f6acb: db_cut + 0x3f6acb (?merge_lutmasks@ASM_LUTMASK@@QEAAXAEBV1@@Z + 0xfb)\n\t0x7ffb659f45dd: db_cut + 0x3f45dd (?get_stratixv_assembler_lutmask@CUT_LCELL_UTIL@@SA_KPEAVCDB_ATOM_NODE@@00000@Z + 0x77d)\n\t0x7ffb4588d85c: db_u2b + 0xcd85c (?convert_alm_attributes@U2B_TRANSLATOR_AV_LAB_ALM@@QEAA_NPEAVU2B_BCM_CONTENT@@PEAVCDB_ATOM_GENERIC@@PEAVU2B_ATOM_CONTENT@@PEAVU2B_CONFIG_SV_ALE@@PEAVU2B_CONFIG_SV_LAB@@H@Z + 0x20c)\n\t0x7ffb4588d4c0: db_u2b + 0xcd4c0 (?convert@U2B_TRANSLATOR_AV_LAB@@UEAAPEAVU2B_BCM_CONTENT@@PEAVU2B_ATOM_CONTENT@@PEAVU2B_CONFIG@@@Z + 0x3d0)\n\t0x7ffb6f3549d5: fitter_fsv + 0x349d5 (?check_u2b_configs_for_conflicts@FSV_U2B_POSTFIT@@AEAAXXZ + 0x585)\n\t0x7ffb6f3596b9: fitter_fsv + 0x396b9 (?work@FSV_U2B_POSTFIT@@QEAAXXZ + 0x139)\n\t0x7ffb38551ca3: fitter_vpr20kmain + 0x601ca3 (vpr_qi_u2b_postfit_work + 0xc3)\n\t0x7ffb381c0376: fitter_vpr20kmain + 0x270376 (aa_flow_finalize + 0x66)\n\t0x7ffb381bb25d: fitter_vpr20kmain + 0x26b25d (aa_flow_fit + 0x20d)\n\t0x7ffb384c35ae: fitter_vpr20kmain + 0x5735ae (?vpr_qi_main@VPR_QI_FACADE@@UEAA_NXZ + 0x6e)\n\t0x7ffb3a2c384e: fitter_fitapi + 0x3384e (fitapi_run_vpr + 0x7e)\n\t0x7ffb6f33fb8f: fitter_fsv + 0x1fb8f (?run_vpr@FSV_EXPERT_BASE@@QEBA_NXZ + 0x13f)\n\t0x7ffb6f33f64d: fitter_fsv + 0x1f64d (?place_and_route@FSV_EXPERT_BASE@@QEBA_NXZ + 0x12d)\n\t0x7ffb6f33eab6: fitter_fsv + 0x1eab6 (?invoke_fitter@FSV_EXPERT_BASE@@QEBA_NXZ + 0x636)\n\t0x7ffb6f33c952: fitter_fsv + 0x1c952 (fsv_execute + 0x22)\n\t0x7ffb76d5e910: FITTER_FMAIN + 0xe910 (?fmain_start@@YA_NPEAVCMP_FACADE@@@Z + 0x900)\n\t0x7ffb3a4341b1: comp_qfit_legacy_flow + 0x41b1 (qfit_execute_fit + 0x1bd)\n\t0x7ffb3a435384: comp_qfit_legacy_flow + 0x5384 (QFIT_FRAMEWORK::execute + 0x2a0)\n\t0x7ffb3a43267f: comp_qfit_legacy_flow + 0x267f (qfit_legacy_flow_run_legacy_fitter_flow + 0x1c7)\n\t 0x5a114410: tcl86 + 0x14410 (TclInvokeStringCommand + 0xf0)\n\t 0x5a1161e2: tcl86 + 0x161e2 (TclNRRunCallbacks + 0x62)\n\t 0x5a117a65: tcl86 + 0x17a65 (TclEvalEx + 0xa65)\n\t 0x5a1a6f8b: tcl86 + 0xa6f8b (Tcl_FSEvalFileEx + 0x22b)\n\t 0x5a1a5646: tcl86 + 0xa5646 (Tcl_EvalFile + 0x36)\n\t0x7ffba5792606: comp_qexe + 0x12606 (?qexe_evaluate_tcl_script@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z + 0x376)\n\t0x7ffba5791864: comp_qexe + 0x11864 (qexe_do_tcl + 0x334)\n\t0x7ffba5796755: comp_qexe + 0x16755 (?qexe_run_tcl_option@@YA_NPEAVQEXE_FRAMEWORK@@PEBDPEAV?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@_N@Z + 0x585)\n\t0x7ffb655780c3: comp_qcu + 0x380c3 (?qcu_run_tcl_option@@YA_NPEAVQCU_FRAMEWORK@@PEBDPEAV?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@_N@Z + 0x1003)\n\t0x7ffba57960aa: comp_qexe + 0x160aa (qexe_run + 0x39a)\n\t0x7ffba5796e51: comp_qexe + 0x16e51 (?qexe_standard_main@@YAHPEAVQEXE_FRAMEWORK@@PEAPEBUQEXE_OPTION_DEFINITION@@HPEAPEBD@Z + 0xc1)\n\t0x7ff62c732233: quartus_fit + 0x2233 (?qfit2_main@@YAHHPEAPEBD@Z + 0x73)\n\t0x7ffbaaeb2e98: CCL_MSG + 0x12e98 (?msg_main_thread@@YAPEAXPEAX@Z + 0x18)\n\t0x7ffbaaeb467e: CCL_MSG + 0x1467e (?msg_thread_wrapper@@YAPEAXP6APEAXPEAX@Z0@Z + 0x6e)\n\t0x7ffbab1a6660: ccl_mem + 0x16660 (?mem_thread_wrapper@@YAPEAXP6APEAXPEAX@Z0@Z + 0x70)\n\t0x7ffbaaeb2761: CCL_MSG + 0x12761 (?msg_exe_main@@YAHHPEAPEBDP6AHH0@Z@Z + 0xa1)\n\t0x7ff62c73287e: quartus_fit + 0x287e (__tmainCRTStartup + 0x10e)\n\t0x7ffbbc5826ac: KERNEL32 + 0x126ac (BaseThreadInitThunk + 0x1c)\n\t0x7ffbbdaaa9f7: ntdll + 0x5a9f7 (RtlUserThreadStart + 0x27)\n",
+		"subsystem" : "CUT"
+	},
+	"quartus" : {
+		"quartus_bits" : "64",
+		"version" : "18.1.0",
+		"build" : "625",
+		"edition" : "Lite Edition"
+	}
+}
