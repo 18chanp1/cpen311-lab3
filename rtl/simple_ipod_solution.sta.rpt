@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for simple_ipod_solution
-Mon Jun 05 15:57:32 2023
+Mon Jun 05 16:35:33 2023
 Quartus Prime Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition
 
 
@@ -85,7 +85,7 @@ agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.3%      ;
+;     Processor 2            ;   0.4%      ;
 +----------------------------+-------------+
 
 
@@ -94,7 +94,7 @@ agreement for further details.
 +------------------------+--------+--------------------------+
 ; SDC File Path          ; Status ; Read at                  ;
 +------------------------+--------+--------------------------+
-; timing_constraints.sdc ; OK     ; Mon Jun 05 15:55:03 2023 ;
+; timing_constraints.sdc ; OK     ; Mon Jun 05 16:33:11 2023 ;
 +------------------------+--------+--------------------------+
 
 
@@ -133,18 +133,18 @@ agreement for further details.
 +------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                                                                                                                ; Note ;
 +------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+------+
-; 54.24 MHz  ; 54.24 MHz       ; altera_reserved_tck                                                                                                                                       ;      ;
-; 80.03 MHz  ; 80.03 MHz       ; CLOCK_50                                                                                                                                                  ;      ;
-; 92.98 MHz  ; 92.98 MHz       ; Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg                                                                      ;      ;
-; 112.61 MHz ; 112.61 MHz      ; TD_CLK27                                                                                                                                                  ;      ;
-; 165.02 MHz ; 165.02 MHz      ; Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                ;      ;
-; 174.89 MHz ; 174.89 MHz      ; doublesync:ps2c_doublsync|reg2                                                                                                                            ;      ;
-; 186.67 MHz ; 186.67 MHz      ; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] ;      ;
-; 193.24 MHz ; 193.24 MHz      ; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]                                                                                                         ;      ;
-; 201.17 MHz ; 201.17 MHz      ; audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK                                                                                             ;      ;
-; 244.08 MHz ; 244.08 MHz      ; led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk                                                                                            ;      ;
-; 293.69 MHz ; 293.69 MHz      ; audio_controller:audio_control|audio_clock:u4|oAUD_BCK                                                                                                    ;      ;
-; 325.95 MHz ; 325.95 MHz      ; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]                                                                                                         ;      ;
+; 54.01 MHz  ; 54.01 MHz       ; altera_reserved_tck                                                                                                                                       ;      ;
+; 80.19 MHz  ; 80.19 MHz       ; CLOCK_50                                                                                                                                                  ;      ;
+; 89.69 MHz  ; 89.69 MHz       ; Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg                                                                      ;      ;
+; 116.46 MHz ; 116.46 MHz      ; TD_CLK27                                                                                                                                                  ;      ;
+; 123.87 MHz ; 123.87 MHz      ; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]                                                                                                         ;      ;
+; 138.41 MHz ; 138.41 MHz      ; doublesync:ps2c_doublsync|reg2                                                                                                                            ;      ;
+; 150.42 MHz ; 150.42 MHz      ; Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                ;      ;
+; 154.63 MHz ; 154.63 MHz      ; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] ;      ;
+; 200.76 MHz ; 200.76 MHz      ; audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK                                                                                             ;      ;
+; 280.82 MHz ; 280.82 MHz      ; led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk                                                                                            ;      ;
+; 311.43 MHz ; 311.43 MHz      ; audio_controller:audio_control|audio_clock:u4|oAUD_BCK                                                                                                    ;      ;
+; 335.57 MHz ; 335.57 MHz      ; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]                                                                                                         ;      ;
 +------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -160,47 +160,47 @@ HTML report is unavailable in plain text report export.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                                                                                                     ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                                                                                                                  ; 4.666  ; 0.000         ;
-; altera_reserved_tck                                                                                                                                       ; 8.189  ; 0.000         ;
-; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]                                                                                                         ; 12.859 ; 0.000         ;
-; Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg                                                                      ; 13.957 ; 0.000         ;
-; doublesync:ps2c_doublsync|reg2                                                                                                                            ; 15.047 ; 0.000         ;
-; Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                 ; 15.237 ; 0.000         ;
-; audio_controller:audio_control|audio_clock:u4|LRCK_1X                                                                                                     ; 15.611 ; 0.000         ;
-; Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                ; 16.518 ; 0.000         ;
-; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] ; 16.629 ; 0.000         ;
-; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]             ; 17.095 ; 0.000         ;
-; TD_CLK27                                                                                                                                                  ; 28.120 ; 0.000         ;
-; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]                                                                                                         ; 33.274 ; 0.000         ;
-; audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK                                                                                             ; 35.029 ; 0.000         ;
-; led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk                                                                                            ; 35.903 ; 0.000         ;
-; audio_controller:audio_control|audio_clock:u4|oAUD_BCK                                                                                                    ; 36.595 ; 0.000         ;
-; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]                                                                                                         ; 36.932 ; 0.000         ;
+; CLOCK_50                                                                                                                                                  ; 4.766  ; 0.000         ;
+; altera_reserved_tck                                                                                                                                       ; 8.286  ; 0.000         ;
+; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]                                                                                                         ; 11.103 ; 0.000         ;
+; doublesync:ps2c_doublsync|reg2                                                                                                                            ; 13.990 ; 0.000         ;
+; Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg                                                                      ; 14.443 ; 0.000         ;
+; audio_controller:audio_control|audio_clock:u4|LRCK_1X                                                                                                     ; 15.016 ; 0.000         ;
+; Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                 ; 15.599 ; 0.000         ;
+; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] ; 15.680 ; 0.000         ;
+; Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                ; 15.951 ; 0.000         ;
+; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]             ; 16.316 ; 0.000         ;
+; TD_CLK27                                                                                                                                                  ; 28.413 ; 0.000         ;
+; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]                                                                                                         ; 31.927 ; 0.000         ;
+; audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK                                                                                             ; 35.019 ; 0.000         ;
+; led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk                                                                                            ; 36.439 ; 0.000         ;
+; audio_controller:audio_control|audio_clock:u4|oAUD_BCK                                                                                                    ; 36.789 ; 0.000         ;
+; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]                                                                                                         ; 37.020 ; 0.000         ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Hold Summary                                                                                                                                                                        ;
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+---------+---------------+
-; Clock                                                                                                                                                     ; Slack   ; End Point TNS ;
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+---------+---------------+
-; TD_CLK27                                                                                                                                                  ; -36.778 ; -1172.000     ;
-; Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg                                                                      ; -0.083  ; -0.083        ;
-; CLOCK_50                                                                                                                                                  ; 0.219   ; 0.000         ;
-; audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK                                                                                             ; 0.273   ; 0.000         ;
-; Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                ; 0.292   ; 0.000         ;
-; altera_reserved_tck                                                                                                                                       ; 0.370   ; 0.000         ;
-; doublesync:ps2c_doublsync|reg2                                                                                                                            ; 0.411   ; 0.000         ;
-; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]                                                                                                         ; 0.429   ; 0.000         ;
-; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] ; 0.733   ; 0.000         ;
-; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]                                                                                                         ; 0.734   ; 0.000         ;
-; audio_controller:audio_control|audio_clock:u4|oAUD_BCK                                                                                                    ; 0.819   ; 0.000         ;
-; led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk                                                                                            ; 0.918   ; 0.000         ;
-; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]             ; 0.923   ; 0.000         ;
-; audio_controller:audio_control|audio_clock:u4|LRCK_1X                                                                                                     ; 2.050   ; 0.000         ;
-; Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                 ; 2.454   ; 0.000         ;
-; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]                                                                                                         ; 19.689  ; 0.000         ;
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+---------+---------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Summary                                                                                                                                                                       ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                                                                                                     ; Slack  ; End Point TNS ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+
+; CLOCK_50                                                                                                                                                  ; 0.223  ; 0.000         ;
+; Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg                                                                      ; 0.234  ; 0.000         ;
+; audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK                                                                                             ; 0.277  ; 0.000         ;
+; Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                ; 0.283  ; 0.000         ;
+; altera_reserved_tck                                                                                                                                       ; 0.372  ; 0.000         ;
+; TD_CLK27                                                                                                                                                  ; 0.489  ; 0.000         ;
+; doublesync:ps2c_doublsync|reg2                                                                                                                            ; 0.618  ; 0.000         ;
+; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] ; 0.650  ; 0.000         ;
+; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]                                                                                                         ; 0.779  ; 0.000         ;
+; led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk                                                                                            ; 0.887  ; 0.000         ;
+; audio_controller:audio_control|audio_clock:u4|oAUD_BCK                                                                                                    ; 0.964  ; 0.000         ;
+; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]                                                                                                         ; 1.100  ; 0.000         ;
+; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]             ; 1.532  ; 0.000         ;
+; Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                 ; 1.895  ; 0.000         ;
+; audio_controller:audio_control|audio_clock:u4|LRCK_1X                                                                                                     ; 2.321  ; 0.000         ;
+; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]                                                                                                         ; 20.051 ; 0.000         ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -208,18 +208,18 @@ HTML report is unavailable in plain text report export.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                                                                                                     ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+
-; music_fetcher:m_fetch_inst|freq_divider:m_fetch_divider|outclk                                                                                            ; 4.230  ; 0.000         ;
-; speed_up_event_trigger                                                                                                                                    ; 4.269  ; 0.000         ;
-; Kbd_ctrl:Kbd_Controller|data_ready                                                                                                                        ; 4.667  ; 0.000         ;
-; doublesync:ps2c_doublsync|reg2                                                                                                                            ; 4.749  ; 0.000         ;
-; speed_down_event_trigger                                                                                                                                  ; 5.036  ; 0.000         ;
-; CLOCK_50                                                                                                                                                  ; 5.714  ; 0.000         ;
-; audio_controller:audio_control|audio_clock:u4|oAUD_BCK                                                                                                    ; 15.270 ; 0.000         ;
-; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] ; 15.283 ; 0.000         ;
-; doublesync:key2_doublsync|reg2                                                                                                                            ; 15.558 ; 0.000         ;
-; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]                                                                                                         ; 15.589 ; 0.000         ;
-; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]                                                                                                         ; 15.715 ; 0.000         ;
-; altera_reserved_tck                                                                                                                                       ; 27.464 ; 0.000         ;
+; doublesync:ps2c_doublsync|reg2                                                                                                                            ; 4.769  ; 0.000         ;
+; music_fetcher:m_fetch_inst|freq_divider:m_fetch_divider|outclk                                                                                            ; 4.881  ; 0.000         ;
+; speed_down_event_trigger                                                                                                                                  ; 5.007  ; 0.000         ;
+; Kbd_ctrl:Kbd_Controller|data_ready                                                                                                                        ; 5.039  ; 0.000         ;
+; speed_up_event_trigger                                                                                                                                    ; 5.192  ; 0.000         ;
+; CLOCK_50                                                                                                                                                  ; 5.850  ; 0.000         ;
+; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]                                                                                                         ; 15.329 ; 0.000         ;
+; doublesync:key2_doublsync|reg2                                                                                                                            ; 15.365 ; 0.000         ;
+; audio_controller:audio_control|audio_clock:u4|oAUD_BCK                                                                                                    ; 15.393 ; 0.000         ;
+; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] ; 15.408 ; 0.000         ;
+; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]                                                                                                         ; 15.577 ; 0.000         ;
+; altera_reserved_tck                                                                                                                                       ; 27.102 ; 0.000         ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -228,18 +228,18 @@ HTML report is unavailable in plain text report export.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                                                                                                     ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                                                                                                                  ; 0.545  ; 0.000         ;
-; altera_reserved_tck                                                                                                                                       ; 0.846  ; 0.000         ;
-; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]                                                                                                         ; 2.387  ; 0.000         ;
-; doublesync:ps2c_doublsync|reg2                                                                                                                            ; 2.693  ; 0.000         ;
-; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]                                                                                                         ; 2.746  ; 0.000         ;
-; doublesync:key2_doublsync|reg2                                                                                                                            ; 2.871  ; 0.000         ;
-; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] ; 2.984  ; 0.000         ;
-; audio_controller:audio_control|audio_clock:u4|oAUD_BCK                                                                                                    ; 3.022  ; 0.000         ;
-; speed_down_event_trigger                                                                                                                                  ; 13.193 ; 0.000         ;
-; Kbd_ctrl:Kbd_Controller|data_ready                                                                                                                        ; 13.315 ; 0.000         ;
-; music_fetcher:m_fetch_inst|freq_divider:m_fetch_divider|outclk                                                                                            ; 13.773 ; 0.000         ;
-; speed_up_event_trigger                                                                                                                                    ; 13.842 ; 0.000         ;
+; CLOCK_50                                                                                                                                                  ; 0.557  ; 0.000         ;
+; altera_reserved_tck                                                                                                                                       ; 0.830  ; 0.000         ;
+; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]                                                                                                         ; 2.326  ; 0.000         ;
+; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] ; 2.525  ; 0.000         ;
+; audio_controller:audio_control|audio_clock:u4|oAUD_BCK                                                                                                    ; 2.832  ; 0.000         ;
+; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]                                                                                                         ; 2.925  ; 0.000         ;
+; doublesync:ps2c_doublsync|reg2                                                                                                                            ; 3.061  ; 0.000         ;
+; doublesync:key2_doublsync|reg2                                                                                                                            ; 3.090  ; 0.000         ;
+; speed_up_event_trigger                                                                                                                                    ; 13.021 ; 0.000         ;
+; Kbd_ctrl:Kbd_Controller|data_ready                                                                                                                        ; 13.095 ; 0.000         ;
+; speed_down_event_trigger                                                                                                                                  ; 13.239 ; 0.000         ;
+; music_fetcher:m_fetch_inst|freq_divider:m_fetch_divider|outclk                                                                                            ; 13.349 ; 0.000         ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -248,28 +248,28 @@ HTML report is unavailable in plain text report export.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                                                                                                     ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                                                                                                                  ; 8.438  ; 0.000         ;
-; altera_reserved_tck                                                                                                                                       ; 15.447 ; 0.000         ;
-; TD_CLK27                                                                                                                                                  ; 17.087 ; 0.000         ;
-; Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg                                                                      ; 18.671 ; 0.000         ;
-; doublesync:ps2c_doublsync|reg2                                                                                                                            ; 19.110 ; 0.000         ;
-; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]                                                                                                         ; 19.210 ; 0.000         ;
-; audio_controller:audio_control|audio_clock:u4|oAUD_BCK                                                                                                    ; 19.257 ; 0.000         ;
-; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]                                                                                                         ; 19.287 ; 0.000         ;
-; audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK                                                                                             ; 19.323 ; 0.000         ;
-; Kbd_ctrl:Kbd_Controller|data_ready                                                                                                                        ; 19.331 ; 0.000         ;
-; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]             ; 19.338 ; 0.000         ;
-; Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                ; 19.348 ; 0.000         ;
-; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]                                                                                                         ; 19.351 ; 0.000         ;
-; audio_controller:audio_control|audio_clock:u4|LRCK_1X                                                                                                     ; 19.360 ; 0.000         ;
-; Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                 ; 19.362 ; 0.000         ;
-; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] ; 19.404 ; 0.000         ;
-; speed_up_event_trigger                                                                                                                                    ; 19.404 ; 0.000         ;
-; music_fetcher:m_fetch_inst|freq_divider:m_fetch_divider|outclk                                                                                            ; 19.408 ; 0.000         ;
-; led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk                                                                                            ; 19.411 ; 0.000         ;
-; doublesync:key2_doublsync|reg2                                                                                                                            ; 19.413 ; 0.000         ;
-; speed_down_event_trigger                                                                                                                                  ; 19.416 ; 0.000         ;
-; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]                                                                                                         ; 19.427 ; 0.000         ;
+; CLOCK_50                                                                                                                                                  ; 8.484  ; 0.000         ;
+; altera_reserved_tck                                                                                                                                       ; 15.443 ; 0.000         ;
+; TD_CLK27                                                                                                                                                  ; 17.137 ; 0.000         ;
+; Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg                                                                      ; 18.667 ; 0.000         ;
+; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]                                                                                                         ; 19.170 ; 0.000         ;
+; audio_controller:audio_control|audio_clock:u4|LRCK_1X                                                                                                     ; 19.270 ; 0.000         ;
+; doublesync:ps2c_doublsync|reg2                                                                                                                            ; 19.273 ; 0.000         ;
+; audio_controller:audio_control|audio_clock:u4|oAUD_BCK                                                                                                    ; 19.276 ; 0.000         ;
+; Kbd_ctrl:Kbd_Controller|data_ready                                                                                                                        ; 19.279 ; 0.000         ;
+; Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                 ; 19.321 ; 0.000         ;
+; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]                                                                                                         ; 19.340 ; 0.000         ;
+; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]                                                                                                         ; 19.348 ; 0.000         ;
+; audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK                                                                                             ; 19.363 ; 0.000         ;
+; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]             ; 19.370 ; 0.000         ;
+; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] ; 19.379 ; 0.000         ;
+; doublesync:key2_doublsync|reg2                                                                                                                            ; 19.386 ; 0.000         ;
+; Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                ; 19.396 ; 0.000         ;
+; led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk                                                                                            ; 19.407 ; 0.000         ;
+; music_fetcher:m_fetch_inst|freq_divider:m_fetch_divider|outclk                                                                                            ; 19.407 ; 0.000         ;
+; speed_down_event_trigger                                                                                                                                  ; 19.411 ; 0.000         ;
+; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]                                                                                                         ; 19.432 ; 0.000         ;
+; speed_up_event_trigger                                                                                                                                    ; 19.432 ; 0.000         ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -280,7 +280,7 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 210
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 23.577 ns
+Worst Case Available Settling Time: 24.382 ns
 
 
 
@@ -774,21 +774,21 @@ Worst Case Available Settling Time: 23.577 ns
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+------------+----------+----------+----------+
 ; From Clock                                                                                                                                                ; To Clock                                                                                                                                                  ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+------------+----------+----------+----------+
-; altera_reserved_tck                                                                                                                                       ; altera_reserved_tck                                                                                                                                       ; 32065      ; 0        ; 183      ; 0        ;
+; altera_reserved_tck                                                                                                                                       ; altera_reserved_tck                                                                                                                                       ; 31955      ; 0        ; 183      ; 0        ;
 ; CLOCK_50                                                                                                                                                  ; altera_reserved_tck                                                                                                                                       ; false path ; 0        ; 0        ; 0        ;
 ; Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg                                                                      ; altera_reserved_tck                                                                                                                                       ; false path ; 0        ; 0        ; 0        ;
 ; CLOCK_50                                                                                                                                                  ; audio_controller:audio_control|audio_clock:u4|LRCK_1X                                                                                                     ; 8          ; 0        ; 8        ; 0        ;
-; audio_controller:audio_control|audio_clock:u4|oAUD_BCK                                                                                                    ; audio_controller:audio_control|audio_clock:u4|oAUD_BCK                                                                                                    ; 0          ; 0        ; 0        ; 11       ;
-; audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK                                                                                             ; audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK                                                                                             ; 866        ; 0        ; 0        ; 0        ;
+; audio_controller:audio_control|audio_clock:u4|oAUD_BCK                                                                                                    ; audio_controller:audio_control|audio_clock:u4|oAUD_BCK                                                                                                    ; 0          ; 0        ; 0        ; 13       ;
+; audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK                                                                                             ; audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK                                                                                             ; 843        ; 0        ; 0        ; 0        ;
 ; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] ; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]             ; 0          ; 0        ; 1        ; 1        ;
 ; audio_controller:audio_control|audio_clock:u4|LRCK_1X                                                                                                     ; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] ; 1          ; 1        ; 0        ; 0        ;
 ; audio_controller:audio_control|audio_clock:u4|oAUD_BCK                                                                                                    ; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] ; 1          ; 1        ; 0        ; 0        ;
-; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] ; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] ; 167        ; 0        ; 0        ; 0        ;
+; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] ; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] ; 178        ; 0        ; 0        ; 0        ;
 ; altera_reserved_tck                                                                                                                                       ; CLOCK_50                                                                                                                                                  ; false path ; 0        ; 0        ; 0        ;
 ; audio_controller:audio_control|audio_clock:u4|LRCK_1X                                                                                                     ; CLOCK_50                                                                                                                                                  ; 0          ; 0        ; 2        ; 2        ;
 ; audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK                                                                                             ; CLOCK_50                                                                                                                                                  ; 1          ; 1        ; 0        ; 0        ;
 ; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]             ; CLOCK_50                                                                                                                                                  ; 0          ; 0        ; 1        ; 1        ;
-; CLOCK_50                                                                                                                                                  ; CLOCK_50                                                                                                                                                  ; 524377     ; 1358     ; 899      ; 216      ;
+; CLOCK_50                                                                                                                                                  ; CLOCK_50                                                                                                                                                  ; 555036     ; 1283     ; 960      ; 230      ;
 ; doublesync:key2_doublsync|reg2                                                                                                                            ; CLOCK_50                                                                                                                                                  ; 34         ; 34       ; 1        ; 0        ;
 ; doublesync:ps2c_doublsync|reg2                                                                                                                            ; CLOCK_50                                                                                                                                                  ; 0          ; 84       ; 0        ; 1        ;
 ; Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                ; CLOCK_50                                                                                                                                                  ; 1          ; 1        ; 0        ; 0        ;
@@ -804,19 +804,19 @@ Worst Case Available Settling Time: 23.577 ns
 ; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]                                                                                                         ; CLOCK_50                                                                                                                                                  ; 21         ; 21       ; 0        ; 0        ;
 ; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]                                                                                                         ; CLOCK_50                                                                                                                                                  ; 21         ; 21       ; 0        ; 0        ;
 ; CLOCK_50                                                                                                                                                  ; doublesync:ps2c_doublsync|reg2                                                                                                                            ; 0          ; 0        ; 1        ; 0        ;
-; doublesync:ps2c_doublsync|reg2                                                                                                                            ; doublesync:ps2c_doublsync|reg2                                                                                                                            ; 0          ; 0        ; 0        ; 49       ;
-; Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                ; Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                ; 477        ; 0        ; 0        ; 0        ;
+; doublesync:ps2c_doublsync|reg2                                                                                                                            ; doublesync:ps2c_doublsync|reg2                                                                                                                            ; 0          ; 0        ; 0        ; 48       ;
+; Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                ; Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                ; 392        ; 0        ; 0        ; 0        ;
 ; speed_down_event_trigger                                                                                                                                  ; Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                ; 1          ; 1        ; 0        ; 0        ;
 ; speed_up_event_trigger                                                                                                                                    ; Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                ; 1          ; 1        ; 0        ; 0        ;
 ; CLOCK_50                                                                                                                                                  ; Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                 ; 16         ; 0        ; 0        ; 0        ;
 ; altera_reserved_tck                                                                                                                                       ; Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg                                                                      ; false path ; 0        ; 0        ; 0        ;
 ; CLOCK_50                                                                                                                                                  ; Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg                                                                      ; 0          ; 0        ; 4        ; 0        ;
 ; Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                ; Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg                                                                      ; 3          ; 3        ; 0        ; 0        ;
-; Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg                                                                      ; Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg                                                                      ; 4334       ; 32       ; 0        ; 2        ;
+; Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg                                                                      ; Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg                                                                      ; 4627       ; 32       ; 0        ; 2        ;
 ; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]                                                                                                         ; Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg                                                                      ; 224        ; 0        ; 0        ; 0        ;
-; led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk                                                                                            ; led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk                                                                                            ; 56         ; 0        ; 0        ; 0        ;
+; led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk                                                                                            ; led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk                                                                                            ; 54         ; 0        ; 0        ; 0        ;
 ; CLOCK_50                                                                                                                                                  ; TD_CLK27                                                                                                                                                  ; 32         ; 0        ; 0        ; 0        ;
-; TD_CLK27                                                                                                                                                  ; TD_CLK27                                                                                                                                                  ; 57773      ; 0        ; 0        ; 0        ;
+; TD_CLK27                                                                                                                                                  ; TD_CLK27                                                                                                                                                  ; 57726      ; 0        ; 0        ; 0        ;
 ; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]                                                                                                         ; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]                                                                                                         ; 112        ; 0        ; 0        ; 0        ;
 ; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]                                                                                                         ; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]                                                                                                         ; 112        ; 0        ; 0        ; 0        ;
 ; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]                                                                                                         ; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]                                                                                                         ; 112        ; 0        ; 0        ; 0        ;
@@ -831,21 +831,21 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+------------+----------+----------+----------+
 ; From Clock                                                                                                                                                ; To Clock                                                                                                                                                  ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+------------+----------+----------+----------+
-; altera_reserved_tck                                                                                                                                       ; altera_reserved_tck                                                                                                                                       ; 32065      ; 0        ; 183      ; 0        ;
+; altera_reserved_tck                                                                                                                                       ; altera_reserved_tck                                                                                                                                       ; 31955      ; 0        ; 183      ; 0        ;
 ; CLOCK_50                                                                                                                                                  ; altera_reserved_tck                                                                                                                                       ; false path ; 0        ; 0        ; 0        ;
 ; Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg                                                                      ; altera_reserved_tck                                                                                                                                       ; false path ; 0        ; 0        ; 0        ;
 ; CLOCK_50                                                                                                                                                  ; audio_controller:audio_control|audio_clock:u4|LRCK_1X                                                                                                     ; 8          ; 0        ; 8        ; 0        ;
-; audio_controller:audio_control|audio_clock:u4|oAUD_BCK                                                                                                    ; audio_controller:audio_control|audio_clock:u4|oAUD_BCK                                                                                                    ; 0          ; 0        ; 0        ; 11       ;
-; audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK                                                                                             ; audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK                                                                                             ; 866        ; 0        ; 0        ; 0        ;
+; audio_controller:audio_control|audio_clock:u4|oAUD_BCK                                                                                                    ; audio_controller:audio_control|audio_clock:u4|oAUD_BCK                                                                                                    ; 0          ; 0        ; 0        ; 13       ;
+; audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK                                                                                             ; audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK                                                                                             ; 843        ; 0        ; 0        ; 0        ;
 ; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] ; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]             ; 0          ; 0        ; 1        ; 1        ;
 ; audio_controller:audio_control|audio_clock:u4|LRCK_1X                                                                                                     ; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] ; 1          ; 1        ; 0        ; 0        ;
 ; audio_controller:audio_control|audio_clock:u4|oAUD_BCK                                                                                                    ; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] ; 1          ; 1        ; 0        ; 0        ;
-; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] ; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] ; 167        ; 0        ; 0        ; 0        ;
+; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] ; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] ; 178        ; 0        ; 0        ; 0        ;
 ; altera_reserved_tck                                                                                                                                       ; CLOCK_50                                                                                                                                                  ; false path ; 0        ; 0        ; 0        ;
 ; audio_controller:audio_control|audio_clock:u4|LRCK_1X                                                                                                     ; CLOCK_50                                                                                                                                                  ; 0          ; 0        ; 2        ; 2        ;
 ; audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK                                                                                             ; CLOCK_50                                                                                                                                                  ; 1          ; 1        ; 0        ; 0        ;
 ; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]             ; CLOCK_50                                                                                                                                                  ; 0          ; 0        ; 1        ; 1        ;
-; CLOCK_50                                                                                                                                                  ; CLOCK_50                                                                                                                                                  ; 524377     ; 1358     ; 899      ; 216      ;
+; CLOCK_50                                                                                                                                                  ; CLOCK_50                                                                                                                                                  ; 555036     ; 1283     ; 960      ; 230      ;
 ; doublesync:key2_doublsync|reg2                                                                                                                            ; CLOCK_50                                                                                                                                                  ; 34         ; 34       ; 1        ; 0        ;
 ; doublesync:ps2c_doublsync|reg2                                                                                                                            ; CLOCK_50                                                                                                                                                  ; 0          ; 84       ; 0        ; 1        ;
 ; Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                ; CLOCK_50                                                                                                                                                  ; 1          ; 1        ; 0        ; 0        ;
@@ -861,19 +861,19 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 ; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]                                                                                                         ; CLOCK_50                                                                                                                                                  ; 21         ; 21       ; 0        ; 0        ;
 ; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]                                                                                                         ; CLOCK_50                                                                                                                                                  ; 21         ; 21       ; 0        ; 0        ;
 ; CLOCK_50                                                                                                                                                  ; doublesync:ps2c_doublsync|reg2                                                                                                                            ; 0          ; 0        ; 1        ; 0        ;
-; doublesync:ps2c_doublsync|reg2                                                                                                                            ; doublesync:ps2c_doublsync|reg2                                                                                                                            ; 0          ; 0        ; 0        ; 49       ;
-; Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                ; Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                ; 477        ; 0        ; 0        ; 0        ;
+; doublesync:ps2c_doublsync|reg2                                                                                                                            ; doublesync:ps2c_doublsync|reg2                                                                                                                            ; 0          ; 0        ; 0        ; 48       ;
+; Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                ; Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                ; 392        ; 0        ; 0        ; 0        ;
 ; speed_down_event_trigger                                                                                                                                  ; Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                ; 1          ; 1        ; 0        ; 0        ;
 ; speed_up_event_trigger                                                                                                                                    ; Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                ; 1          ; 1        ; 0        ; 0        ;
 ; CLOCK_50                                                                                                                                                  ; Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                 ; 16         ; 0        ; 0        ; 0        ;
 ; altera_reserved_tck                                                                                                                                       ; Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg                                                                      ; false path ; 0        ; 0        ; 0        ;
 ; CLOCK_50                                                                                                                                                  ; Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg                                                                      ; 0          ; 0        ; 4        ; 0        ;
 ; Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg                                                                                ; Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg                                                                      ; 3          ; 3        ; 0        ; 0        ;
-; Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg                                                                      ; Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg                                                                      ; 4334       ; 32       ; 0        ; 2        ;
+; Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg                                                                      ; Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg                                                                      ; 4627       ; 32       ; 0        ; 2        ;
 ; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]                                                                                                         ; Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg                                                                      ; 224        ; 0        ; 0        ; 0        ;
-; led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk                                                                                            ; led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk                                                                                            ; 56         ; 0        ; 0        ; 0        ;
+; led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk                                                                                            ; led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk                                                                                            ; 54         ; 0        ; 0        ; 0        ;
 ; CLOCK_50                                                                                                                                                  ; TD_CLK27                                                                                                                                                  ; 32         ; 0        ; 0        ; 0        ;
-; TD_CLK27                                                                                                                                                  ; TD_CLK27                                                                                                                                                  ; 57773      ; 0        ; 0        ; 0        ;
+; TD_CLK27                                                                                                                                                  ; TD_CLK27                                                                                                                                                  ; 57726      ; 0        ; 0        ; 0        ;
 ; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]                                                                                                         ; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]                                                                                                         ; 112        ; 0        ; 0        ; 0        ;
 ; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]                                                                                                         ; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]                                                                                                         ; 112        ; 0        ; 0        ; 0        ;
 ; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]                                                                                                         ; Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]                                                                                                         ; 112        ; 0        ; 0        ; 0        ;
@@ -888,11 +888,11 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+------------+----------+----------+----------+
 ; From Clock          ; To Clock                                                                                                                                                  ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+------------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck                                                                                                                                       ; 2775       ; 0        ; 0        ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck                                                                                                                                       ; 2803       ; 0        ; 0        ; 0        ;
 ; CLOCK_50            ; audio_controller:audio_control|audio_clock:u4|oAUD_BCK                                                                                                    ; 0          ; 0        ; 5        ; 0        ;
 ; CLOCK_50            ; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] ; 16         ; 0        ; 0        ; 0        ;
 ; altera_reserved_tck ; CLOCK_50                                                                                                                                                  ; false path ; 0        ; 0        ; 0        ;
-; CLOCK_50            ; CLOCK_50                                                                                                                                                  ; 387        ; 140      ; 60       ; 0        ;
+; CLOCK_50            ; CLOCK_50                                                                                                                                                  ; 385        ; 141      ; 67       ; 0        ;
 ; CLOCK_50            ; doublesync:key2_doublsync|reg2                                                                                                                            ; 1          ; 0        ; 0        ; 0        ;
 ; CLOCK_50            ; doublesync:ps2c_doublsync|reg2                                                                                                                            ; 0          ; 0        ; 1        ; 7        ;
 ; altera_reserved_tck ; Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg                                                                      ; false path ; 0        ; 0        ; 0        ;
@@ -911,11 +911,11 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+------------+----------+----------+----------+
 ; From Clock          ; To Clock                                                                                                                                                  ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+------------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck                                                                                                                                       ; 2775       ; 0        ; 0        ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck                                                                                                                                       ; 2803       ; 0        ; 0        ; 0        ;
 ; CLOCK_50            ; audio_controller:audio_control|audio_clock:u4|oAUD_BCK                                                                                                    ; 0          ; 0        ; 5        ; 0        ;
 ; CLOCK_50            ; audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] ; 16         ; 0        ; 0        ; 0        ;
 ; altera_reserved_tck ; CLOCK_50                                                                                                                                                  ; false path ; 0        ; 0        ; 0        ;
-; CLOCK_50            ; CLOCK_50                                                                                                                                                  ; 387        ; 140      ; 60       ; 0        ;
+; CLOCK_50            ; CLOCK_50                                                                                                                                                  ; 385        ; 141      ; 67       ; 0        ;
 ; CLOCK_50            ; doublesync:key2_doublsync|reg2                                                                                                                            ; 1          ; 0        ; 0        ; 0        ;
 ; CLOCK_50            ; doublesync:ps2c_doublsync|reg2                                                                                                                            ; 0          ; 0        ; 1        ; 7        ;
 ; altera_reserved_tck ; Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg                                                                      ; false path ; 0        ; 0        ; 0        ;
@@ -1157,11 +1157,9 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition
-    Info: Processing started: Mon Jun 05 15:54:58 2023
+    Info: Processing started: Mon Jun 05 16:33:04 2023
 Info: Command: quartus_sta simple_ipod_solution -c simple_ipod_solution
 Info: qsta_default_script.tcl version: #1
-Info (293032): Detected changes in source files.
-    Info (293027): Source file: C:/cpen311/cpen311-lab2/rtl/timing_constraints.sdc has changed.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
@@ -1174,114 +1172,112 @@ Info (332104): Reading SDC File: 'timing_constraints.sdc'
 Warning (332043): Overwriting existing clock: altera_reserved_tck
 Info (332152): The following assignments are ignored by the derive_clock_uncertainty command
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
-Info (332146): Worst-case setup slack is 4.666
+Info (332146): Worst-case setup slack is 4.766
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     4.666               0.000 CLOCK_50 
-    Info (332119):     8.189               0.000 altera_reserved_tck 
-    Info (332119):    12.859               0.000 Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9] 
-    Info (332119):    13.957               0.000 Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg 
-    Info (332119):    15.047               0.000 doublesync:ps2c_doublsync|reg2 
-    Info (332119):    15.237               0.000 Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg 
-    Info (332119):    15.611               0.000 audio_controller:audio_control|audio_clock:u4|LRCK_1X 
-    Info (332119):    16.518               0.000 Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg 
-    Info (332119):    16.629               0.000 audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] 
-    Info (332119):    17.095               0.000 audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0] 
-    Info (332119):    28.120               0.000 TD_CLK27 
-    Info (332119):    33.274               0.000 Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4] 
-    Info (332119):    35.029               0.000 audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK 
-    Info (332119):    35.903               0.000 led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk 
-    Info (332119):    36.595               0.000 audio_controller:audio_control|audio_clock:u4|oAUD_BCK 
-    Info (332119):    36.932               0.000 Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6] 
-Critical Warning (332148): Timing requirements not met
-    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case hold slack is -36.778
+    Info (332119):     4.766               0.000 CLOCK_50 
+    Info (332119):     8.286               0.000 altera_reserved_tck 
+    Info (332119):    11.103               0.000 Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9] 
+    Info (332119):    13.990               0.000 doublesync:ps2c_doublsync|reg2 
+    Info (332119):    14.443               0.000 Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg 
+    Info (332119):    15.016               0.000 audio_controller:audio_control|audio_clock:u4|LRCK_1X 
+    Info (332119):    15.599               0.000 Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg 
+    Info (332119):    15.680               0.000 audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] 
+    Info (332119):    15.951               0.000 Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg 
+    Info (332119):    16.316               0.000 audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0] 
+    Info (332119):    28.413               0.000 TD_CLK27 
+    Info (332119):    31.927               0.000 Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4] 
+    Info (332119):    35.019               0.000 audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK 
+    Info (332119):    36.439               0.000 led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk 
+    Info (332119):    36.789               0.000 audio_controller:audio_control|audio_clock:u4|oAUD_BCK 
+    Info (332119):    37.020               0.000 Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6] 
+Info (332146): Worst-case hold slack is 0.223
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -36.778           -1172.000 TD_CLK27 
-    Info (332119):    -0.083              -0.083 Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg 
-    Info (332119):     0.219               0.000 CLOCK_50 
-    Info (332119):     0.273               0.000 audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK 
-    Info (332119):     0.292               0.000 Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg 
-    Info (332119):     0.370               0.000 altera_reserved_tck 
-    Info (332119):     0.411               0.000 doublesync:ps2c_doublsync|reg2 
-    Info (332119):     0.429               0.000 Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4] 
-    Info (332119):     0.733               0.000 audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] 
-    Info (332119):     0.734               0.000 Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6] 
-    Info (332119):     0.819               0.000 audio_controller:audio_control|audio_clock:u4|oAUD_BCK 
-    Info (332119):     0.918               0.000 led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk 
-    Info (332119):     0.923               0.000 audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0] 
-    Info (332119):     2.050               0.000 audio_controller:audio_control|audio_clock:u4|LRCK_1X 
-    Info (332119):     2.454               0.000 Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg 
-    Info (332119):    19.689               0.000 Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9] 
-Info (332146): Worst-case recovery slack is 4.230
+    Info (332119):     0.223               0.000 CLOCK_50 
+    Info (332119):     0.234               0.000 Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg 
+    Info (332119):     0.277               0.000 audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK 
+    Info (332119):     0.283               0.000 Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg 
+    Info (332119):     0.372               0.000 altera_reserved_tck 
+    Info (332119):     0.489               0.000 TD_CLK27 
+    Info (332119):     0.618               0.000 doublesync:ps2c_doublsync|reg2 
+    Info (332119):     0.650               0.000 audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] 
+    Info (332119):     0.779               0.000 Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6] 
+    Info (332119):     0.887               0.000 led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk 
+    Info (332119):     0.964               0.000 audio_controller:audio_control|audio_clock:u4|oAUD_BCK 
+    Info (332119):     1.100               0.000 Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4] 
+    Info (332119):     1.532               0.000 audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0] 
+    Info (332119):     1.895               0.000 Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg 
+    Info (332119):     2.321               0.000 audio_controller:audio_control|audio_clock:u4|LRCK_1X 
+    Info (332119):    20.051               0.000 Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9] 
+Info (332146): Worst-case recovery slack is 4.769
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     4.230               0.000 music_fetcher:m_fetch_inst|freq_divider:m_fetch_divider|outclk 
-    Info (332119):     4.269               0.000 speed_up_event_trigger 
-    Info (332119):     4.667               0.000 Kbd_ctrl:Kbd_Controller|data_ready 
-    Info (332119):     4.749               0.000 doublesync:ps2c_doublsync|reg2 
-    Info (332119):     5.036               0.000 speed_down_event_trigger 
-    Info (332119):     5.714               0.000 CLOCK_50 
-    Info (332119):    15.270               0.000 audio_controller:audio_control|audio_clock:u4|oAUD_BCK 
-    Info (332119):    15.283               0.000 audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] 
-    Info (332119):    15.558               0.000 doublesync:key2_doublsync|reg2 
-    Info (332119):    15.589               0.000 Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5] 
-    Info (332119):    15.715               0.000 Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6] 
-    Info (332119):    27.464               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.545
+    Info (332119):     4.769               0.000 doublesync:ps2c_doublsync|reg2 
+    Info (332119):     4.881               0.000 music_fetcher:m_fetch_inst|freq_divider:m_fetch_divider|outclk 
+    Info (332119):     5.007               0.000 speed_down_event_trigger 
+    Info (332119):     5.039               0.000 Kbd_ctrl:Kbd_Controller|data_ready 
+    Info (332119):     5.192               0.000 speed_up_event_trigger 
+    Info (332119):     5.850               0.000 CLOCK_50 
+    Info (332119):    15.329               0.000 Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6] 
+    Info (332119):    15.365               0.000 doublesync:key2_doublsync|reg2 
+    Info (332119):    15.393               0.000 audio_controller:audio_control|audio_clock:u4|oAUD_BCK 
+    Info (332119):    15.408               0.000 audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] 
+    Info (332119):    15.577               0.000 Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5] 
+    Info (332119):    27.102               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.557
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.545               0.000 CLOCK_50 
-    Info (332119):     0.846               0.000 altera_reserved_tck 
-    Info (332119):     2.387               0.000 Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5] 
-    Info (332119):     2.693               0.000 doublesync:ps2c_doublsync|reg2 
-    Info (332119):     2.746               0.000 Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6] 
-    Info (332119):     2.871               0.000 doublesync:key2_doublsync|reg2 
-    Info (332119):     2.984               0.000 audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] 
-    Info (332119):     3.022               0.000 audio_controller:audio_control|audio_clock:u4|oAUD_BCK 
-    Info (332119):    13.193               0.000 speed_down_event_trigger 
-    Info (332119):    13.315               0.000 Kbd_ctrl:Kbd_Controller|data_ready 
-    Info (332119):    13.773               0.000 music_fetcher:m_fetch_inst|freq_divider:m_fetch_divider|outclk 
-    Info (332119):    13.842               0.000 speed_up_event_trigger 
-Info (332146): Worst-case minimum pulse width slack is 8.438
+    Info (332119):     0.557               0.000 CLOCK_50 
+    Info (332119):     0.830               0.000 altera_reserved_tck 
+    Info (332119):     2.326               0.000 Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5] 
+    Info (332119):     2.525               0.000 audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] 
+    Info (332119):     2.832               0.000 audio_controller:audio_control|audio_clock:u4|oAUD_BCK 
+    Info (332119):     2.925               0.000 Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6] 
+    Info (332119):     3.061               0.000 doublesync:ps2c_doublsync|reg2 
+    Info (332119):     3.090               0.000 doublesync:key2_doublsync|reg2 
+    Info (332119):    13.021               0.000 speed_up_event_trigger 
+    Info (332119):    13.095               0.000 Kbd_ctrl:Kbd_Controller|data_ready 
+    Info (332119):    13.239               0.000 speed_down_event_trigger 
+    Info (332119):    13.349               0.000 music_fetcher:m_fetch_inst|freq_divider:m_fetch_divider|outclk 
+Info (332146): Worst-case minimum pulse width slack is 8.484
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     8.438               0.000 CLOCK_50 
-    Info (332119):    15.447               0.000 altera_reserved_tck 
-    Info (332119):    17.087               0.000 TD_CLK27 
-    Info (332119):    18.671               0.000 Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg 
-    Info (332119):    19.110               0.000 doublesync:ps2c_doublsync|reg2 
-    Info (332119):    19.210               0.000 Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4] 
-    Info (332119):    19.257               0.000 audio_controller:audio_control|audio_clock:u4|oAUD_BCK 
-    Info (332119):    19.287               0.000 Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9] 
-    Info (332119):    19.323               0.000 audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK 
-    Info (332119):    19.331               0.000 Kbd_ctrl:Kbd_Controller|data_ready 
-    Info (332119):    19.338               0.000 audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0] 
-    Info (332119):    19.348               0.000 Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg 
-    Info (332119):    19.351               0.000 Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5] 
-    Info (332119):    19.360               0.000 audio_controller:audio_control|audio_clock:u4|LRCK_1X 
-    Info (332119):    19.362               0.000 Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg 
-    Info (332119):    19.404               0.000 audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] 
-    Info (332119):    19.404               0.000 speed_up_event_trigger 
-    Info (332119):    19.408               0.000 music_fetcher:m_fetch_inst|freq_divider:m_fetch_divider|outclk 
-    Info (332119):    19.411               0.000 led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk 
-    Info (332119):    19.413               0.000 doublesync:key2_doublsync|reg2 
-    Info (332119):    19.416               0.000 speed_down_event_trigger 
-    Info (332119):    19.427               0.000 Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6] 
+    Info (332119):     8.484               0.000 CLOCK_50 
+    Info (332119):    15.443               0.000 altera_reserved_tck 
+    Info (332119):    17.137               0.000 TD_CLK27 
+    Info (332119):    18.667               0.000 Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg 
+    Info (332119):    19.170               0.000 Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4] 
+    Info (332119):    19.270               0.000 audio_controller:audio_control|audio_clock:u4|LRCK_1X 
+    Info (332119):    19.273               0.000 doublesync:ps2c_doublsync|reg2 
+    Info (332119):    19.276               0.000 audio_controller:audio_control|audio_clock:u4|oAUD_BCK 
+    Info (332119):    19.279               0.000 Kbd_ctrl:Kbd_Controller|data_ready 
+    Info (332119):    19.321               0.000 Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg 
+    Info (332119):    19.340               0.000 Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5] 
+    Info (332119):    19.348               0.000 Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6] 
+    Info (332119):    19.363               0.000 audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK 
+    Info (332119):    19.370               0.000 audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0] 
+    Info (332119):    19.379               0.000 audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0] 
+    Info (332119):    19.386               0.000 doublesync:key2_doublsync|reg2 
+    Info (332119):    19.396               0.000 Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg 
+    Info (332119):    19.407               0.000 led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk 
+    Info (332119):    19.407               0.000 music_fetcher:m_fetch_inst|freq_divider:m_fetch_divider|outclk 
+    Info (332119):    19.411               0.000 speed_down_event_trigger 
+    Info (332119):    19.432               0.000 Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9] 
+    Info (332119):    19.432               0.000 speed_up_event_trigger 
 Info (332114): Report Metastability: Found 210 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
     Info (332114): Number of Synchronizer Chains Found: 210
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 23.577 ns
+    Info (332114): Worst Case Available Settling Time: 24.382 ns
     Info (332114): 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 5063 megabytes
-    Info: Processing ended: Mon Jun 05 15:57:32 2023
-    Info: Elapsed time: 00:02:34
-    Info: Total CPU time (on all processors): 00:01:49
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 5061 megabytes
+    Info: Processing ended: Mon Jun 05 16:35:33 2023
+    Info: Elapsed time: 00:02:29
+    Info: Total CPU time (on all processors): 00:01:55
 
 
