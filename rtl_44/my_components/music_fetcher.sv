@@ -1,5 +1,6 @@
 /*
-Cyclically fetches music from flash memory and outputs it
+Cyclically fetches music from flash memory and outputs it.
+Takes 5 cycles + flash cycles.
 Details on inputs below
 */
 module music_fetcher 
@@ -24,7 +25,8 @@ module music_fetcher
     input  logic                                flash_mem_waitrequest,
     input  logic    [DATA_WIDTH - 1:0]          flash_mem_readdata,
     /* Ouputs to flash */
-      output logic    [BYTEENABLE_WIDTH - 1:0]    flash_mem_byteenable,
+    output logic                                flash_mem_read,             /* Avalon bus. Please see documentation */
+    output logic    [BYTEENABLE_WIDTH - 1:0]    flash_mem_byteenable,
     output logic    [ADDR_WIDTH - 1:0]          flash_mem_address,
     /* Audio data output*/
     output logic    [AUDIO_DATA_WIDTH - 1:0]    audio_data                  /* Audio data output */
@@ -49,18 +51,27 @@ module music_fetcher
     /* FSM Outputs */
     assign flash_mem_address = state[STATE_WIDTH - 1:FSM_OUT_WIDTH];    /* 23 bits */
     /* state[3:2] uniquely identifies state*/                           /* 2 bits */
-    /* ~state[1] determines whether music is being paused          	   /* 1 bit  */
+    /* ~state[1] determines whether music is being paused          	    /* 1 bit  */
     assign flash_mem_read = state[0];                                   /* 1 bit  */
     
     assign flash_mem_byteenable = 4'b0000;
 
+    /*synchronize "div" to clk_27*/
+    logic [31:0] s27_div;
+    logic [31:0] s27_div1;
+
+
+    always_ff @(posedge clk_27) begin
+        s27_div1 <= sample_freq_div;
+        s27_div <= s27_div1;
+    end 
+    
     /*freq divider */
     logic sampling_freq;
-    
     freq_divider m_fetch_divider (
         .inclk(clk_27),
-        .rst(rst),
-        .div(sample_freq_div),
+        .rst(1'h0),
+        .div(s27_div),
         .outclk(sampling_freq)
     );
 
