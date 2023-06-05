@@ -20,7 +20,7 @@
 ## PROGRAM "Quartus Prime"
 ## VERSION "Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition"
 
-## DATE    "Mon Jun 05 14:11:37 2023"
+## DATE    "Mon Jun 05 15:38:20 2023"
 
 ##
 ## DEVICE  "5CSEMA5F31C6"
@@ -79,138 +79,30 @@ create_clock -name {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CL
 # Set Clock Uncertainty
 #**************************************************************
 
-set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}] -rise_to [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}] -fall_to [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}] -rise_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}] -fall_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}] -rise_to [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}] -fall_to [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}] -rise_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}] -fall_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}] -rise_to [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}] -fall_to [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}] -rise_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}] -fall_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}] -rise_to [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}] -fall_to [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}] -rise_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}] -fall_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}] -rise_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}] -fall_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}] -rise_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}] -fall_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}] -rise_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}] -fall_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}] -rise_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}] -fall_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -rise_to [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -fall_to [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -rise_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -fall_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -rise_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -fall_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -rise_to [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -fall_to [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -rise_to [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -fall_to [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -rise_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -fall_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -rise_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -fall_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -rise_to [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -fall_to [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}] -rise_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}] -fall_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}] -rise_to [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}] -fall_to [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}] -rise_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}] -fall_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}] -rise_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}] -fall_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}] -rise_to [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}] -fall_to [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}] -rise_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}] -fall_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}] -rise_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}] -fall_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}] -rise_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}] -fall_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}] -rise_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}] -fall_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}] -rise_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}] -fall_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}] -rise_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}] -fall_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}] -rise_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}] -fall_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}] -rise_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}] -fall_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}] -rise_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}] -fall_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -rise_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -fall_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -rise_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -fall_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -rise_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -fall_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -rise_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -fall_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -rise_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -fall_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
 set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}]  0.380  
 set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}]  0.380  
 set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}]  0.380  
 set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}]  0.380  
 set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -rise_to [get_clocks {CLOCK_50}]  0.350  
 set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -fall_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -rise_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -fall_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -rise_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -fall_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
 set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}]  0.380  
 set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}]  0.380  
 set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}]  0.380  
 set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}]  0.380  
 set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -rise_to [get_clocks {CLOCK_50}]  0.350  
 set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -fall_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -rise_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -fall_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
 set_clock_uncertainty -rise_from [get_clocks {led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk}] -rise_to [get_clocks {led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk}]  0.380  
 set_clock_uncertainty -rise_from [get_clocks {led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk}] -fall_to [get_clocks {led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk}]  0.380  
 set_clock_uncertainty -rise_from [get_clocks {led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk}] -rise_to [get_clocks {CLOCK_50}]  0.350  
@@ -235,8 +127,6 @@ set_clock_uncertainty -fall_from [get_clocks {speed_down_event_trigger}] -rise_t
 set_clock_uncertainty -fall_from [get_clocks {speed_down_event_trigger}] -fall_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
 set_clock_uncertainty -fall_from [get_clocks {speed_down_event_trigger}] -rise_to [get_clocks {CLOCK_50}]  0.350  
 set_clock_uncertainty -fall_from [get_clocks {speed_down_event_trigger}] -fall_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg}] -rise_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg}] -fall_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
 set_clock_uncertainty -rise_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg}] -rise_to [get_clocks {speed_down_event_trigger}]  0.380  
 set_clock_uncertainty -rise_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg}] -fall_to [get_clocks {speed_down_event_trigger}]  0.380  
 set_clock_uncertainty -rise_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg}] -rise_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
@@ -245,8 +135,8 @@ set_clock_uncertainty -rise_from [get_clocks {Generate_Arbitrary_Divided_Clk32:G
 set_clock_uncertainty -rise_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg}] -fall_to [get_clocks {speed_up_event_trigger}]  0.380  
 set_clock_uncertainty -rise_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg}] -rise_to [get_clocks {CLOCK_50}]  0.350  
 set_clock_uncertainty -rise_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg}] -fall_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg}] -rise_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg}] -fall_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg}] -rise_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg}] -fall_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
 set_clock_uncertainty -fall_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg}] -rise_to [get_clocks {speed_down_event_trigger}]  0.380  
 set_clock_uncertainty -fall_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg}] -fall_to [get_clocks {speed_down_event_trigger}]  0.380  
 set_clock_uncertainty -fall_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg}] -rise_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
@@ -255,6 +145,8 @@ set_clock_uncertainty -fall_from [get_clocks {Generate_Arbitrary_Divided_Clk32:G
 set_clock_uncertainty -fall_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg}] -fall_to [get_clocks {speed_up_event_trigger}]  0.380  
 set_clock_uncertainty -fall_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg}] -rise_to [get_clocks {CLOCK_50}]  0.350  
 set_clock_uncertainty -fall_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg}] -fall_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg}] -rise_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg}] -fall_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
 set_clock_uncertainty -rise_from [get_clocks {speed_up_event_trigger}] -rise_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
 set_clock_uncertainty -rise_from [get_clocks {speed_up_event_trigger}] -fall_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_1KHz_clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
 set_clock_uncertainty -rise_from [get_clocks {speed_up_event_trigger}] -rise_to [get_clocks {speed_up_event_trigger}]  0.380  
@@ -279,26 +171,26 @@ set_clock_uncertainty -fall_from [get_clocks {Kbd_ctrl:Kbd_Controller|data_ready
 set_clock_uncertainty -fall_from [get_clocks {Kbd_ctrl:Kbd_Controller|data_ready}] -fall_to [get_clocks {Kbd_ctrl:Kbd_Controller|data_ready}]  0.380  
 set_clock_uncertainty -fall_from [get_clocks {Kbd_ctrl:Kbd_Controller|data_ready}] -rise_to [get_clocks {CLOCK_50}]  0.350  
 set_clock_uncertainty -fall_from [get_clocks {Kbd_ctrl:Kbd_Controller|data_ready}] -fall_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
 set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}]  0.380  
 set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}]  0.380  
 set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}]  0.380  
 set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}]  0.380  
 set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}] -rise_to [get_clocks {CLOCK_50}]  0.350  
 set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}] -fall_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
 set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}]  0.380  
 set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}]  0.380  
 set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}]  0.380  
 set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}]  0.380  
 set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}] -rise_to [get_clocks {CLOCK_50}]  0.350  
 set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}] -fall_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
 set_clock_uncertainty -rise_from [get_clocks {TD_CLK27}] -rise_to [get_clocks {music_fetcher:m_fetch_inst|freq_divider:m_fetch_divider|outclk}]  0.350  
 set_clock_uncertainty -rise_from [get_clocks {TD_CLK27}] -fall_to [get_clocks {music_fetcher:m_fetch_inst|freq_divider:m_fetch_divider|outclk}]  0.350  
 set_clock_uncertainty -rise_from [get_clocks {TD_CLK27}] -rise_to [get_clocks {TD_CLK27}] -setup 0.310  
@@ -311,38 +203,22 @@ set_clock_uncertainty -fall_from [get_clocks {TD_CLK27}] -rise_to [get_clocks {T
 set_clock_uncertainty -fall_from [get_clocks {TD_CLK27}] -rise_to [get_clocks {TD_CLK27}] -hold 0.270  
 set_clock_uncertainty -fall_from [get_clocks {TD_CLK27}] -fall_to [get_clocks {TD_CLK27}] -setup 0.310  
 set_clock_uncertainty -fall_from [get_clocks {TD_CLK27}] -fall_to [get_clocks {TD_CLK27}] -hold 0.270  
-set_clock_uncertainty -rise_from [get_clocks {doublesync:ps2c_doublsync|reg2}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
-set_clock_uncertainty -rise_from [get_clocks {doublesync:ps2c_doublsync|reg2}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
 set_clock_uncertainty -rise_from [get_clocks {doublesync:ps2c_doublsync|reg2}] -rise_to [get_clocks {Kbd_ctrl:Kbd_Controller|data_ready}]  0.380  
 set_clock_uncertainty -rise_from [get_clocks {doublesync:ps2c_doublsync|reg2}] -fall_to [get_clocks {Kbd_ctrl:Kbd_Controller|data_ready}]  0.380  
 set_clock_uncertainty -rise_from [get_clocks {doublesync:ps2c_doublsync|reg2}] -rise_to [get_clocks {doublesync:ps2c_doublsync|reg2}]  0.380  
 set_clock_uncertainty -rise_from [get_clocks {doublesync:ps2c_doublsync|reg2}] -fall_to [get_clocks {doublesync:ps2c_doublsync|reg2}]  0.380  
 set_clock_uncertainty -rise_from [get_clocks {doublesync:ps2c_doublsync|reg2}] -rise_to [get_clocks {CLOCK_50}]  0.350  
 set_clock_uncertainty -rise_from [get_clocks {doublesync:ps2c_doublsync|reg2}] -fall_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {doublesync:ps2c_doublsync|reg2}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
-set_clock_uncertainty -fall_from [get_clocks {doublesync:ps2c_doublsync|reg2}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {doublesync:ps2c_doublsync|reg2}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {doublesync:ps2c_doublsync|reg2}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
 set_clock_uncertainty -fall_from [get_clocks {doublesync:ps2c_doublsync|reg2}] -rise_to [get_clocks {Kbd_ctrl:Kbd_Controller|data_ready}]  0.380  
 set_clock_uncertainty -fall_from [get_clocks {doublesync:ps2c_doublsync|reg2}] -fall_to [get_clocks {Kbd_ctrl:Kbd_Controller|data_ready}]  0.380  
 set_clock_uncertainty -fall_from [get_clocks {doublesync:ps2c_doublsync|reg2}] -rise_to [get_clocks {doublesync:ps2c_doublsync|reg2}]  0.380  
 set_clock_uncertainty -fall_from [get_clocks {doublesync:ps2c_doublsync|reg2}] -fall_to [get_clocks {doublesync:ps2c_doublsync|reg2}]  0.380  
 set_clock_uncertainty -fall_from [get_clocks {doublesync:ps2c_doublsync|reg2}] -rise_to [get_clocks {CLOCK_50}]  0.350  
 set_clock_uncertainty -fall_from [get_clocks {doublesync:ps2c_doublsync|reg2}] -fall_to [get_clocks {CLOCK_50}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.350  
-set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {doublesync:ps2c_doublsync|reg2}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {doublesync:ps2c_doublsync|reg2}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
 set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}]  0.350  
 set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}]  0.350  
 set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk}]  0.350  
@@ -369,22 +245,22 @@ set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {C
 set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {CLOCK_50}] -hold 0.270  
 set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {CLOCK_50}] -setup 0.310  
 set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {CLOCK_50}] -hold 0.270  
-set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.350  
-set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.350  
 set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}]  0.350  
 set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}]  0.350  
 set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {led_flasher:flasher_inst|freq_divider:led_flash_divider|outclk}]  0.350  
@@ -411,6 +287,22 @@ set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {C
 set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {CLOCK_50}] -hold 0.270  
 set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {CLOCK_50}] -setup 0.310  
 set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {CLOCK_50}] -hold 0.270  
+set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {CLOCK_50}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.350  
 set_clock_uncertainty -rise_from [get_clocks {altera_reserved_tck}] -rise_to [get_clocks {altera_reserved_tck}] -setup 0.170  
 set_clock_uncertainty -rise_from [get_clocks {altera_reserved_tck}] -rise_to [get_clocks {altera_reserved_tck}] -hold 0.060  
 set_clock_uncertainty -rise_from [get_clocks {altera_reserved_tck}] -fall_to [get_clocks {altera_reserved_tck}] -setup 0.170  
@@ -419,6 +311,114 @@ set_clock_uncertainty -fall_from [get_clocks {altera_reserved_tck}] -rise_to [ge
 set_clock_uncertainty -fall_from [get_clocks {altera_reserved_tck}] -rise_to [get_clocks {altera_reserved_tck}] -hold 0.060  
 set_clock_uncertainty -fall_from [get_clocks {altera_reserved_tck}] -fall_to [get_clocks {altera_reserved_tck}] -setup 0.170  
 set_clock_uncertainty -fall_from [get_clocks {altera_reserved_tck}] -fall_to [get_clocks {altera_reserved_tck}] -hold 0.060  
+set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}] -rise_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}] -fall_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}] -rise_to [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}] -fall_to [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}] -rise_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}] -fall_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}] -rise_to [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}] -fall_to [get_clocks {audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}] -rise_to [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}] -fall_to [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}] -rise_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}] -fall_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}] -rise_to [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}] -fall_to [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}] -rise_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}] -fall_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}] -rise_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}] -fall_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}] -rise_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}] -fall_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}] -rise_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}] -fall_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}] -rise_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}] -fall_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -rise_to [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -fall_to [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -rise_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -fall_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -rise_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -fall_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -rise_to [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -fall_to [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -rise_to [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -fall_to [get_clocks {audio_controller:audio_control|audio_clock:u4|oAUD_BCK}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -rise_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -fall_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_reg_top|outdata[0]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -rise_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -fall_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -rise_to [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}] -fall_to [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}] -rise_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}] -fall_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}] -rise_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}] -fall_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}] -rise_to [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}] -fall_to [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}] -rise_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}] -fall_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}] -rise_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}] -fall_to [get_clocks {audio_controller:audio_control|TFF_power_of_2_division_counter_with_auto_phase_inversion:generate_aud_ctrl_clk|widereg:div_regs_gen[1].div_reg|outdata[0]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}] -rise_to [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}] -fall_to [get_clocks {audio_controller:audio_control|audio_clock:u4|LRCK_1X}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}] -rise_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}] -fall_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}] -rise_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}] -fall_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}] -rise_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}] -fall_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}] -rise_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}] -fall_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}] -rise_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}] -fall_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}] -rise_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}] -fall_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}] -rise_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}] -fall_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}] -rise_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}] -fall_to [get_clocks {Generate_Arbitrary_Divided_Clk32:Gen_2Hz_clk|var_clk_div32:Div_Clk|tc_reg}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -rise_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -fall_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -rise_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -fall_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -rise_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -fall_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
+set_clock_uncertainty -rise_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[5]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -rise_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -fall_to [get_clocks {CLOCK_50}]  0.350  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -rise_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
+set_clock_uncertainty -fall_from [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}] -fall_to [get_clocks {Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[9]}]  0.380  
 
 
 #**************************************************************
@@ -450,8 +450,7 @@ set_clock_groups -asynchronous -group [get_clocks {altera_reserved_tck}]
 # Set Multicycle Path
 #**************************************************************
 
-set_multicycle_path -setup -end -from [get_keepers {fetcher_controller:controller_inst|sample_freq_div[15]}] -to [get_keepers {music_fetcher:m_fetch_inst|s27_div1[15]}] 2
-set_multicycle_path -setup -end -from [get_registers {fetcher_controller:controller_inst|sample_freq_div[31] fetcher_controller:controller_inst|sample_freq_div[0] fetcher_controller:controller_inst|sample_freq_div[1] fetcher_controller:controller_inst|sample_freq_div[2] fetcher_controller:controller_inst|sample_freq_div[3] fetcher_controller:controller_inst|sample_freq_div[4] fetcher_controller:controller_inst|sample_freq_div[5] fetcher_controller:controller_inst|sample_freq_div[6] fetcher_controller:controller_inst|sample_freq_div[7] fetcher_controller:controller_inst|sample_freq_div[8] fetcher_controller:controller_inst|sample_freq_div[9] fetcher_controller:controller_inst|sample_freq_div[10] fetcher_controller:controller_inst|sample_freq_div[11] fetcher_controller:controller_inst|sample_freq_div[12] fetcher_controller:controller_inst|sample_freq_div[13] fetcher_controller:controller_inst|sample_freq_div[14] fetcher_controller:controller_inst|sample_freq_div[15] fetcher_controller:controller_inst|sample_freq_div[16] fetcher_controller:controller_inst|sample_freq_div[17] fetcher_controller:controller_inst|sample_freq_div[18] fetcher_controller:controller_inst|sample_freq_div[19] fetcher_controller:controller_inst|sample_freq_div[20] fetcher_controller:controller_inst|sample_freq_div[21] fetcher_controller:controller_inst|sample_freq_div[22] fetcher_controller:controller_inst|sample_freq_div[23] fetcher_controller:controller_inst|sample_freq_div[24] fetcher_controller:controller_inst|sample_freq_div[25] fetcher_controller:controller_inst|sample_freq_div[26] fetcher_controller:controller_inst|sample_freq_div[27] fetcher_controller:controller_inst|sample_freq_div[28] fetcher_controller:controller_inst|sample_freq_div[29] fetcher_controller:controller_inst|sample_freq_div[30]}] -to [get_registers {music_fetcher:m_fetch_inst|s27_div1[31] music_fetcher:m_fetch_inst|s27_div1[0] music_fetcher:m_fetch_inst|s27_div1[1] music_fetcher:m_fetch_inst|s27_div1[2] music_fetcher:m_fetch_inst|s27_div1[3] music_fetcher:m_fetch_inst|s27_div1[4] music_fetcher:m_fetch_inst|s27_div1[5] music_fetcher:m_fetch_inst|s27_div1[6] music_fetcher:m_fetch_inst|s27_div1[7] music_fetcher:m_fetch_inst|s27_div1[8] music_fetcher:m_fetch_inst|s27_div1[9] music_fetcher:m_fetch_inst|s27_div1[10] music_fetcher:m_fetch_inst|s27_div1[11] music_fetcher:m_fetch_inst|s27_div1[12] music_fetcher:m_fetch_inst|s27_div1[13] music_fetcher:m_fetch_inst|s27_div1[14] music_fetcher:m_fetch_inst|s27_div1[15] music_fetcher:m_fetch_inst|s27_div1[16] music_fetcher:m_fetch_inst|s27_div1[17] music_fetcher:m_fetch_inst|s27_div1[18] music_fetcher:m_fetch_inst|s27_div1[19] music_fetcher:m_fetch_inst|s27_div1[20] music_fetcher:m_fetch_inst|s27_div1[21] music_fetcher:m_fetch_inst|s27_div1[22] music_fetcher:m_fetch_inst|s27_div1[23] music_fetcher:m_fetch_inst|s27_div1[24] music_fetcher:m_fetch_inst|s27_div1[25] music_fetcher:m_fetch_inst|s27_div1[26] music_fetcher:m_fetch_inst|s27_div1[27] music_fetcher:m_fetch_inst|s27_div1[28] music_fetcher:m_fetch_inst|s27_div1[29] music_fetcher:m_fetch_inst|s27_div1[30]}] 2
+set_multicycle_path -setup -end -from [get_registers {fetcher_controller:controller_inst|sample_freq_div[0] fetcher_controller:controller_inst|sample_freq_div[1] fetcher_controller:controller_inst|sample_freq_div[2] fetcher_controller:controller_inst|sample_freq_div[3] fetcher_controller:controller_inst|sample_freq_div[4] fetcher_controller:controller_inst|sample_freq_div[5] fetcher_controller:controller_inst|sample_freq_div[6] fetcher_controller:controller_inst|sample_freq_div[7] fetcher_controller:controller_inst|sample_freq_div[8] fetcher_controller:controller_inst|sample_freq_div[9] fetcher_controller:controller_inst|sample_freq_div[10] fetcher_controller:controller_inst|sample_freq_div[11] fetcher_controller:controller_inst|sample_freq_div[12] fetcher_controller:controller_inst|sample_freq_div[13] fetcher_controller:controller_inst|sample_freq_div[14] fetcher_controller:controller_inst|sample_freq_div[15] fetcher_controller:controller_inst|sample_freq_div[16] fetcher_controller:controller_inst|sample_freq_div[17] fetcher_controller:controller_inst|sample_freq_div[18] fetcher_controller:controller_inst|sample_freq_div[19] fetcher_controller:controller_inst|sample_freq_div[20] fetcher_controller:controller_inst|sample_freq_div[21] fetcher_controller:controller_inst|sample_freq_div[22] fetcher_controller:controller_inst|sample_freq_div[23] fetcher_controller:controller_inst|sample_freq_div[24] fetcher_controller:controller_inst|sample_freq_div[25] fetcher_controller:controller_inst|sample_freq_div[26] fetcher_controller:controller_inst|sample_freq_div[27] fetcher_controller:controller_inst|sample_freq_div[28] fetcher_controller:controller_inst|sample_freq_div[29] fetcher_controller:controller_inst|sample_freq_div[30] fetcher_controller:controller_inst|sample_freq_div[31]}] -to [get_registers {music_fetcher:m_fetch_inst|s27_div1[0] music_fetcher:m_fetch_inst|s27_div1[1] music_fetcher:m_fetch_inst|s27_div1[2] music_fetcher:m_fetch_inst|s27_div1[3] music_fetcher:m_fetch_inst|s27_div1[4] music_fetcher:m_fetch_inst|s27_div1[5] music_fetcher:m_fetch_inst|s27_div1[6] music_fetcher:m_fetch_inst|s27_div1[7] music_fetcher:m_fetch_inst|s27_div1[8] music_fetcher:m_fetch_inst|s27_div1[9] music_fetcher:m_fetch_inst|s27_div1[10] music_fetcher:m_fetch_inst|s27_div1[11] music_fetcher:m_fetch_inst|s27_div1[12] music_fetcher:m_fetch_inst|s27_div1[13] music_fetcher:m_fetch_inst|s27_div1[14] music_fetcher:m_fetch_inst|s27_div1[15] music_fetcher:m_fetch_inst|s27_div1[16] music_fetcher:m_fetch_inst|s27_div1[17] music_fetcher:m_fetch_inst|s27_div1[18] music_fetcher:m_fetch_inst|s27_div1[19] music_fetcher:m_fetch_inst|s27_div1[20] music_fetcher:m_fetch_inst|s27_div1[21] music_fetcher:m_fetch_inst|s27_div1[22] music_fetcher:m_fetch_inst|s27_div1[23] music_fetcher:m_fetch_inst|s27_div1[24] music_fetcher:m_fetch_inst|s27_div1[25] music_fetcher:m_fetch_inst|s27_div1[26] music_fetcher:m_fetch_inst|s27_div1[27] music_fetcher:m_fetch_inst|s27_div1[28] music_fetcher:m_fetch_inst|s27_div1[29] music_fetcher:m_fetch_inst|s27_div1[30] music_fetcher:m_fetch_inst|s27_div1[31]}] 2
 
 
 #**************************************************************

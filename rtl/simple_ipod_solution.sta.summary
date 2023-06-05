@@ -2,10 +2,6 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Setup 'TD_CLK27'
-Slack : -1.671
-TNS   : -47.535
-
 Type  : Setup 'CLOCK_50'
 Slack : 4.666
 TNS   : 0.000
@@ -46,6 +42,10 @@ Type  : Setup 'audio_controller:audio_control|TFF_power_of_2_division_counter_wi
 Slack : 17.095
 TNS   : 0.000
 
+Type  : Setup 'TD_CLK27'
+Slack : 28.120
+TNS   : 0.000
+
 Type  : Setup 'Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[4]'
 Slack : 33.274
 TNS   : 0.000
@@ -66,16 +66,16 @@ Type  : Setup 'Write_Kbd_To_Scope_LCD:Write_Kbd_To_LCD1|state[6]'
 Slack : 36.932
 TNS   : 0.000
 
+Type  : Hold 'TD_CLK27'
+Slack : -36.778
+TNS   : -1172.000
+
 Type  : Hold 'Generate_Arbitrary_Divided_Clk32:Generate_LCD_scope_Clk|var_clk_div32:Div_Clk|tc_reg'
 Slack : -0.083
 TNS   : -0.083
 
 Type  : Hold 'CLOCK_50'
 Slack : 0.219
-TNS   : 0.000
-
-Type  : Hold 'TD_CLK27'
-Slack : 0.222
 TNS   : 0.000
 
 Type  : Hold 'audio_controller:audio_control|I2C_AV_Config:u3|mI2C_CTRL_CLK'
