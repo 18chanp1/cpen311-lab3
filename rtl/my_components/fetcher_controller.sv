@@ -29,6 +29,7 @@ module fetcher_controller
     output logic                        pause,               /* output logic to music_fetcher*/
     output logic                        forward,
     output logic                        fetcher_reset
+    /* Outputs are synchronized to clk */
 );
 
     logic [2:0] state;
