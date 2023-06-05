@@ -20,46 +20,16 @@ module fetcher_controller
 (
     input logic                         clk,
     input logic  [7:0]                  scan_code,           /* For keyboard scan code */                   
-    input logic                         kbd_data_ready,      /* Keyboard ready (seems async) */
+    input logic                         kbd_data_ready,      /* Keyboard ready, sync */
     input logic                         rst,                 /* Synchronous */
-    input logic                         speed_up_event,      /* synchronous keyboard event */
-    input logic                         speed_down_event,    /* synchronous keyboard event */
-    input logic                         speed_reset_event,   /* synchronous keyboard event */
+    input logic                         speed_up_event,      /* synchronous button event */
+    input logic                         speed_down_event,    /* synchronous button event */
+    input logic                         speed_reset_event,   /* synchronous button event */
     output logic [FREQ_DIV_WIDTH - 1:0] sample_freq_div,     /* number of times sampling period fits into 27Mhz wave */ 
     output logic                        pause,               /* output logic to music_fetcher*/
     output logic                        forward,
     output logic                        fetcher_reset
 );
-    /* Synchronize kbd_data_ready */
-    logic sync_kbd_ready;
-    synchronizer kbd_sync
-    (
-        .insignal(kbd_data_ready),
-        .clk(clk),
-        .synced(sync_kbd_ready)
-    );
-
-    /* Synchronize up, down, reset, events */
-    logic sync_spdup_e, sync_spddown_e, sync_rst_e;
-    synchronizer up_sync
-    (
-        .insignal(speed_up_event),
-        .clk(clk),
-        .synced(sync_spdup_e)
-    );
-    synchronizer down_sync
-    (
-        .insignal(speed_down_event),
-        .clk(clk),
-        .synced(sync_spddown_e)
-    );
-    synchronizer reset_sync
-    (
-        .insignal(speed_reset_event),
-        .clk(clk),
-        .synced(sync_rst_e)
-    );
-
 
     logic [2:0] state;
     assign pause =          ~state[2]; 
@@ -72,7 +42,7 @@ module fetcher_controller
             /*Default is paused, forward, not reset*/
             state <= 3'b0;
         end
-        else if (sync_kbd_ready)begin
+        else if (kbd_data_ready)begin
             state[0] <= 1'b0;
             case(scan_code)
                 D: state <= {PAUSE, state[1:0]};
@@ -91,9 +61,9 @@ module fetcher_controller
         if(rst) begin
             speed <= {FREQ_DIV_WIDTH{1'b0}};
         end
-        else if(sync_rst_e)      speed <= 32'b0;
-        else if(sync_spdup_e)         speed <= speed - 1; 
-        else if (sync_spddown_e)      speed <= speed + 1;
+        else if(speed_reset_event)      speed <= 32'b0;
+        else if(speed_up_event)         speed <= speed - 1; 
+        else if (speed_down_event)      speed <= speed + 1;
         else speed <= speed;
     end
 

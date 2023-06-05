@@ -1,22 +1,23 @@
-C:/Users/beako/Documents/cpen311/cpen311-lab2/sim/fetcher_controller/tb_fetcher_controller.sv {1 {vlog -work work -sv -stats=none C:/Users/beako/Documents/cpen311/cpen311-lab2/sim/fetcher_controller/tb_fetcher_controller.sv
+C:/cpen311/cpen311-lab2/sim/fetcher_controller/fetcher_controller.sv {1 {vlog -work work -sv -stats=none C:/cpen311/cpen311-lab2/sim/fetcher_controller/fetcher_controller.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module fetcher_controller
+
+Top level modules:
+	fetcher_controller
+
+} {} {}} C:/cpen311/cpen311-lab2/sim/fetcher_controller/tb_fetcher_controller.sv {1 {vlog -work work -sv -stats=none C:/cpen311/cpen311-lab2/sim/fetcher_controller/tb_fetcher_controller.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module tb_fetcher_controller
 
 Top level modules:
 	tb_fetcher_controller
 
-} {} {}} C:/Users/beako/Documents/cpen311/cpen311-lab2/sim/fetcher_controller/synchronizer.sv {1 {vlog -work work -sv -stats=none C:/Users/beako/Documents/cpen311/cpen311-lab2/sim/fetcher_controller/synchronizer.sv
+} {} {}} C:/cpen311/cpen311-lab2/sim/fetcher_controller/synchronizer.sv {1 {vlog -work work -sv -stats=none C:/cpen311/cpen311-lab2/sim/fetcher_controller/synchronizer.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module synchronizer
+-- Compiling module flip
 
 Top level modules:
 	synchronizer
-
-} {} {}} C:/Users/beako/Documents/cpen311/cpen311-lab2/sim/fetcher_controller/fetcher_controller.sv {1 {vlog -work work -sv -stats=none C:/Users/beako/Documents/cpen311/cpen311-lab2/sim/fetcher_controller/fetcher_controller.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module fetcher_controller
-
-Top level modules:
-	fetcher_controller
 
 } {} {}}

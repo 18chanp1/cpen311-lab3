@@ -10,49 +10,73 @@ cModel Technology
 dC:/Users/beako/Documents/cpen311/cpen311-lab2/sim/music_fetcher
 vfetcher_controller
 Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z1 !s110 1685831075
+Z1 !s110 1685984767
 !i10b 1
-!s100 BCG9[UX3RTh92nM0z4dkF2
-I1V3kLi69SzcGYoV[hi4@d0
+!s100 5KXnk6V47=P;8kNdg]g`91
+ILj9e@ehc5c??l>JBS:5k?1
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 !s105 fetcher_controller_sv_unit
 S1
-Z3 dC:/Users/beako/Documents/cpen311/cpen311-lab2/sim/fetcher_controller
-w1685829327
-8C:/Users/beako/Documents/cpen311/cpen311-lab2/sim/fetcher_controller/fetcher_controller.sv
-FC:/Users/beako/Documents/cpen311/cpen311-lab2/sim/fetcher_controller/fetcher_controller.sv
+Z3 dC:/cpen311/cpen311-lab2/sim/fetcher_controller
+w1685984040
+8C:/cpen311/cpen311-lab2/sim/fetcher_controller/fetcher_controller.sv
+FC:/cpen311/cpen311-lab2/sim/fetcher_controller/fetcher_controller.sv
 L0 4
 Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1685831075.000000
-!s107 C:/Users/beako/Documents/cpen311/cpen311-lab2/sim/fetcher_controller/fetcher_controller.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/beako/Documents/cpen311/cpen311-lab2/sim/fetcher_controller/fetcher_controller.sv|
+Z5 !s108 1685984767.000000
+!s107 C:/cpen311/cpen311-lab2/sim/fetcher_controller/fetcher_controller.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/cpen311/cpen311-lab2/sim/fetcher_controller/fetcher_controller.sv|
 !i113 1
 Z6 o-work work -sv
 Z7 tCvgOpt 0
+vflip
+R0
+R1
+!i10b 1
+!s100 >46d<>J?N0Gfz4=8O70;@2
+I5G1eD?[8hjhX4HAe>JH6c2
+R2
+Z8 !s105 synchronizer_sv_unit
+S1
+R3
+Z9 w1685984677
+Z10 8C:/cpen311/cpen311-lab2/sim/fetcher_controller/synchronizer.sv
+Z11 FC:/cpen311/cpen311-lab2/sim/fetcher_controller/synchronizer.sv
+L0 19
+R4
+r1
+!s85 0
+31
+R5
+Z12 !s107 C:/cpen311/cpen311-lab2/sim/fetcher_controller/synchronizer.sv|
+Z13 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/cpen311/cpen311-lab2/sim/fetcher_controller/synchronizer.sv|
+!i113 1
+R6
+R7
 vsynchronizer
 R0
 R1
 !i10b 1
-!s100 dbTVdhDBnU;?b<lTD]04L0
-I:<Vf88ZW6@1oW8FdZSToz1
+!s100 T5_U>;N_V0aO5GFcad6AK3
+I]?kKQn2i3Xk`J[iX?nn8P2
 R2
-!s105 synchronizer_sv_unit
+R8
 S1
 R3
-w1685599533
-8C:/Users/beako/Documents/cpen311/cpen311-lab2/sim/fetcher_controller/synchronizer.sv
-FC:/Users/beako/Documents/cpen311/cpen311-lab2/sim/fetcher_controller/synchronizer.sv
+R9
+R10
+R11
 L0 2
 R4
 r1
 !s85 0
 31
 R5
-!s107 C:/Users/beako/Documents/cpen311/cpen311-lab2/sim/fetcher_controller/synchronizer.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/beako/Documents/cpen311/cpen311-lab2/sim/fetcher_controller/synchronizer.sv|
+R12
+R13
 !i113 1
 R6
 R7
@@ -61,22 +85,22 @@ R0
 R1
 !i10b 1
 !s100 `_:Xn=UeKLX8zke6VgcTn2
-IFF=Y;^kL8^HI;6Y4c;X520
+IH=X5[YVY0Wd5RVRWI0egH3
 R2
 !s105 tb_fetcher_controller_sv_unit
 S1
 R3
-w1685765685
-8C:/Users/beako/Documents/cpen311/cpen311-lab2/sim/fetcher_controller/tb_fetcher_controller.sv
-FC:/Users/beako/Documents/cpen311/cpen311-lab2/sim/fetcher_controller/tb_fetcher_controller.sv
+w1685984229
+8C:/cpen311/cpen311-lab2/sim/fetcher_controller/tb_fetcher_controller.sv
+FC:/cpen311/cpen311-lab2/sim/fetcher_controller/tb_fetcher_controller.sv
 L0 3
 R4
 r1
 !s85 0
 31
 R5
-!s107 C:/Users/beako/Documents/cpen311/cpen311-lab2/sim/fetcher_controller/tb_fetcher_controller.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/beako/Documents/cpen311/cpen311-lab2/sim/fetcher_controller/tb_fetcher_controller.sv|
+!s107 C:/cpen311/cpen311-lab2/sim/fetcher_controller/tb_fetcher_controller.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/cpen311/cpen311-lab2/sim/fetcher_controller/tb_fetcher_controller.sv|
 !i113 1
 R6
 R7
