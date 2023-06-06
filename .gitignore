@@ -15,6 +15,6 @@ c5_pin_model_dump.txt
 *.smsg
 *.summary
 *.pin
-
+c5_pin_model_dump.txt
 db/
 incremental_db/
