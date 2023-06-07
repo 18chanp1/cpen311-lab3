@@ -1,0 +1,122 @@
+                 ; Port definitions
+                 CONSTANT LED_port, 80
+                 CONSTANT LED_accumulator_port, 90
+                 CONSTANT DATA_IN_PORT, 00
+                 ; Special Register Usage
+                 ;None
+                 ; Scratchpad memory locations
+                 ;Preserve registers s0-s3, led pattern
+                 CONSTANT ISR_preserve_sB, 00
+                 CONSTANT ISR_preserve_sC, 01
+                 CONSTANT ISR_preserve_sD, 02
+                 CONSTANT ISR_preserve_sE, 03
+                 CONSTANT COUNTER_256, 05
+                 CONSTANT SUM0, 06
+                 CONSTANT SUM1, 07
+                 ; Constants
+                 ;Clock constants
+                 CONSTANT delay_1us_constant, 0B
+                 ;Initialize System
+     cold_start: LOAD sA, 01
+                 LOAD sB, FF
+                 LOAD sC, 00
+                 STORE sB, COUNTER_256             ;initialize to FF, so overflows and outputs 0 right away
+                 STORE sC, SUM0                    ;initialize to 0
+                 STORE sC, SUM1
+                 OUTPUT sA, LED_port               ;turn on LED
+                 OUTPUT sB, LED_accumulator_port   ;set accumulator display to 00
+                 ENABLE INTERRUPT
+                 ; Main Program
+   main_program: CALL delay_1s
+                 COMPARE sA, 01
+                 JUMP NZ, add
+       subtract: SUB sA, 01                        ;sA == 01
+                 JUMP set_led
+            add: ADD sA, 01                        ;sA != 01
+        set_led: OUTPUT sA, LED_port
+                 JUMP main_program
+                 ; Routines for software delays, borrowed from in-class activity
+      delay_1us: LOAD s0, delay_1us_constant
+       wait_1us: SUB s0, 01
+                 JUMP NZ, wait_1us
+                 RETURN
+                 ;
+                 ; Delay of 40us.
+                 ;
+                 ; Registers used s0, s1
+                 ;
+     delay_40us: LOAD s1, 28                       ;40 x 1us = 40us
+      wait_40us: CALL delay_1us
+                 SUB s1, 01
+                 JUMP NZ, wait_40us
+                 RETURN
+                 ;
+                 ;
+                 ; Delay of 1ms.
+                 ;
+                 ; Registers used s0, s1, s2
+                 ;
+      delay_1ms: LOAD s2, 19                       ;25 x 40us = 1ms
+       wait_1ms: CALL delay_40us
+                 SUB s2, 01
+                 JUMP NZ, wait_1ms
+                 RETURN
+                 ;
+                 ; Delay of 20ms.
+                 ;
+                 ; Delay of 20ms used during initialisation.
+                 ;
+                 ; Registers used s0, s1, s2, s3
+                 ;
+     delay_20ms: LOAD s3, 14                       ;20 x 1ms = 20ms
+      wait_20ms: CALL delay_1ms
+                 SUB s3, 01
+                 JUMP NZ, wait_20ms
+                 RETURN
+    delay_100ms: LOAD s3, 64                       ;100 x 1ms = 20ms
+     wait_100ms: CALL delay_1ms
+                 SUB s3, 01
+                 JUMP NZ, wait_100ms
+                 RETURN
+                 ;
+                 ; Delay of approximately 1 second.
+                 ;
+                 ; Registers used s0, s1, s2, s3, s4
+                 ;
+       delay_1s: LOAD s4, 32                       ;50 x 20ms = 1000ms
+        wait_1s: CALL delay_20ms
+                 SUB s4, 01
+                 JUMP NZ, wait_1s
+                 RETURN
+                 ;ISR Routine
+            ISR: STORE sB, ISR_preserve_sB
+                 STORE sC, ISR_preserve_sC
+                 STORE sD, ISR_preserve_sD
+                 STORE sE, ISR_preserve_sE
+                 FETCH sB, COUNTER_256
+                 FETCH sC, SUM0
+                 FETCH sD, SUM1
+                 ADD sB, 01                        ;increment counter
+                 JUMP NC, accumulator_add          ;when overflow, is 256
+                 LOAD sE, FF
+     shift_left: SL0 sD                            ;loop until all bits shifted away
+                 JUMP C, output_sum
+                 SL0 sE
+                 JUMP NZ, shift_left
+     output_sum: OUTPUT sE, LED_accumulator_port   ;if overflow, output and rst accumulator
+                 LOAD sC, 00
+                 LOAD sD, 00
+accumulator_add: INPUT sE, DATA_IN_PORT
+                 ADDCY sC, sE
+                 ADDCY sD, 00
+        end_isr: STORE sB, COUNTER_256
+                 STORE sC, SUM0
+                 STORE sD, SUM1
+                 FETCH sB, ISR_preserve_sB         ;restore registers
+                 FETCH sC, ISR_preserve_sC
+                 FETCH sD, ISR_preserve_sD
+                 FETCH sE, ISR_preserve_sE
+                 RETURNI ENABLE
+                 ;Interrupt Vector
+                 ADDRESS 3FF
+                 JUMP ISR

@@ -1,7 +1,7 @@
                 ; Port definitions
 
-                    CONSTANT LED_port 80
-                    CONSTANT LED_accumulator_port 90
+                    CONSTANT LED_port, 80
+                    CONSTANT LED_accumulator_port, 90
                     CONSTANT DATA_IN_PORT, 00
 
                 ; Special Register Usage
@@ -45,7 +45,7 @@
         subtract:   SUB sA, 01              ;sA == 01
                     JUMP set_led
              add:   ADD sA, 01              ;sA != 01
-         set_led:   OUTPUT sA, LED_PORT
+         set_led:   OUTPUT sA, LED_port
                     JUMP main_program
 
                 ; Routines for software delays, borrowed from in-class activity
@@ -111,20 +111,20 @@
                     STORE sD, ISR_preserve_sD
                     STORE sE, ISR_preserve_sE
                     FETCH sB, COUNTER_256
-                    FETCH sC, ACCUMULATOR0
-                    FETCH sD, ACCUMULATOR1
+                    FETCH sC, SUM0
+                    FETCH sD, SUM1
 
 
-                    ADD sB 01                           ;increment counter
+                    ADD sB, 01                           ;increment counter
                     JUMP NC, accumulator_add            ;when overflow, is 256
 
                     LOAD sE, FF
         shift_left: SL0 sD                               ;loop until all bits shifted away
-                    JUMP C output_sum
+                    JUMP C, output_sum
                     SL0 sE
-                    JUMP NZ shift_left
+                    JUMP NZ, shift_left
 
-     output_sum:    OUTPUT sE, LED_accumulator_port     ;if overflow, output and rst accumulator
+        output_sum: OUTPUT sE, LED_accumulator_port     ;if overflow, output and rst accumulator
                     LOAD sC, 00
                     LOAD sD, 00
 
@@ -133,8 +133,8 @@
                     ADDCY sD, 00
 
         end_isr:    STORE sB, COUNTER_256
-                    STORE sC, ACCUMULATOR0
-                    STORE sD, ACCUMULATOR1
+                    STORE sC, SUM0
+                    STORE sD, SUM1
                     FETCH sB, ISR_preserve_sB           ;restore registers
                     FETCH sC, ISR_preserve_sC
                     FETCH sD, ISR_preserve_sD
