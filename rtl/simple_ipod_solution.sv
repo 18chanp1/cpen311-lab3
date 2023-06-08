@@ -125,9 +125,9 @@ output                      DRAM_WE_N;
 //=======================================================
 // Input and output declarations
 logic CLK_50M;
-logic  [7:0] LED;
+logic  [9:0] LED;
 assign CLK_50M =  CLOCK_50;
-assign LEDR[7:0] = LED[7:0];
+assign LEDR[9:0] = LED[9:0];
 
 //Character definitions
 
@@ -235,6 +235,7 @@ wire    [3:0]   flash_mem_byteenable;
 
 /* data from memory  */
 logic[15:0] odata /* synthesis keep */;
+logic       music_ready;
 
 //FSM fetches music from memory
 music_fetcher m_fetch_inst (
@@ -250,7 +251,8 @@ music_fetcher m_fetch_inst (
     .flash_mem_readdata(flash_mem_readdata),
     .flash_mem_readdatavalid(flash_mem_readdatavalid),
     .flash_mem_byteenable(flash_mem_byteenable),
-    .audio_data(odata)
+    .audio_data(odata),
+    .audio_ready(music_ready)
 );
 
 /* control signals for music_fetcher */
@@ -289,9 +291,16 @@ flash flash_inst (
     .flash_mem_byteenable    (flash_mem_byteenable)
 );
 
-/* Add LED Flasher*/
+/* volume display module*/
+voldisp voldisp_inst 
+(
+    .clk(CLK_50M),
+    .read_interrupt(music_ready),
+    .music_data(odata[15:8]),
+    .LED_volume(LED[9:2]),
+    .LED_1s(LED[0])
+);
 
-led_flasher flasher_inst(.clk (CLK_50M), .rst(~KEY[3]), .outLED(LED[7:0]));
             
 assign Sample_Clk_Signal = Clock_1KHz;
 

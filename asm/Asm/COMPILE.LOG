@@ -6,7 +6,7 @@ PASS 1 - Reading input PSM file
 
 ; Port definitions
 CONSTANT LED_port, 80
-CONSTANT LED_accumulator_port, 90
+CONSTANT LED_accumulator_port, 40
 CONSTANT DATA_IN_PORT, 00
 ; Special Register Usage
 ;None
@@ -113,7 +113,11 @@ output_sum: OUTPUT sE, LED_accumulator_port     ;if overflow, output and rst acc
 LOAD sC, 00
 LOAD sD, 00
 accumulator_add:INPUT sE, DATA_IN_PORT
-ADDCY sC, sE
+COMPARE sE, 00
+JUMP NC, pos_add
+SUB sE, 01
+XOR sE, FF
+pos_add:    ADD sC, sE
 ADDCY sD, 00
 end_isr:    STORE sB, COUNTER_256
 STORE sC, SUM0
@@ -131,7 +135,7 @@ PASS 2 - Testing Instructions
 
 ; Port definitions
 CONSTANT LED_port, 80
-CONSTANT LED_accumulator_port, 90
+CONSTANT LED_accumulator_port, 40
 CONSTANT DATA_IN_PORT, 00
 ; Special Register Usage
 ;None
@@ -238,7 +242,11 @@ output_sum: OUTPUT sE, LED_accumulator_port;if overflow, output and rst accumula
 LOAD sC, 00
 LOAD sD, 00
 accumulator_add: INPUT sE, DATA_IN_PORT
-ADDCY sC, sE
+COMPARE sE, 00
+JUMP NC, pos_add
+SUB sE, 01
+XOR sE, FF
+pos_add: ADD sC, sE
 ADDCY sD, 00
 end_isr: STORE sB, COUNTER_256
 STORE sC, SUM0
@@ -256,7 +264,7 @@ PASS 3 - Resolving addresses and line labels
 
 000 ; Port definitions
 000 CONSTANT LED_port, 80
-000 CONSTANT LED_accumulator_port, 90
+000 CONSTANT LED_accumulator_port, 40
 000 CONSTANT DATA_IN_PORT, 00
 000 ; Special Register Usage
 000 ;None
@@ -365,25 +373,29 @@ output_sum: OUTPUT sE, LED_accumulator_port;if overflow, output and rst accumula
 03D LOAD sC, 00
 03E LOAD sD, 00
 03F accumulator_add: INPUT sE, DATA_IN_PORT
-040 ADDCY sC, sE
-041 ADDCY sD, 00
-042 end_isr: STORE sB, COUNTER_256
-043 STORE sC, SUM0
-044 STORE sD, SUM1
-045 FETCH sB, ISR_preserve_sB;restore registers
-046 FETCH sC, ISR_preserve_sC
-047 FETCH sD, ISR_preserve_sD
-048 FETCH sE, ISR_preserve_sE
-049 RETURNI ENABLE
-04A ;Interrupt Vector
-04A ADDRESS 3FF
+040 COMPARE sE, 00
+041 JUMP NC, pos_add
+042 SUB sE, 01
+043 XOR sE, FF
+044 pos_add: ADD sC, sE
+045 ADDCY sD, 00
+046 end_isr: STORE sB, COUNTER_256
+047 STORE sC, SUM0
+048 STORE sD, SUM1
+049 FETCH sB, ISR_preserve_sB;restore registers
+04A FETCH sC, ISR_preserve_sC
+04B FETCH sD, ISR_preserve_sD
+04C FETCH sE, ISR_preserve_sE
+04D RETURNI ENABLE
+04E ;Interrupt Vector
+04E ADDRESS 3FF
 3FF JUMP ISR
 
 PASS 4 - Resolving Operands
 
 000 ; Port definitions
 000 CONSTANT LED_port, 80
-000 CONSTANT LED_accumulator_port, 90
+000 CONSTANT LED_accumulator_port, 40
 000 CONSTANT DATA_IN_PORT, 00
 000 ; Special Register Usage
 000 ;None
@@ -492,17 +504,21 @@ output_sum: OUTPUT sE, LED_accumulator_port;if overflow, output and rst accumula
 03D LOAD sC, 00
 03E LOAD sD, 00
 03F accumulator_add: INPUT sE, DATA_IN_PORT
-040 ADDCY sC, sE
-041 ADDCY sD, 00
-042 end_isr: STORE sB, COUNTER_256
-043 STORE sC, SUM0
-044 STORE sD, SUM1
-045 FETCH sB, ISR_preserve_sB;restore registers
-046 FETCH sC, ISR_preserve_sC
-047 FETCH sD, ISR_preserve_sD
-048 FETCH sE, ISR_preserve_sE
-049 RETURNI ENABLE
-04A ;Interrupt Vector
+040 COMPARE sE, 00
+041 JUMP NC, pos_add
+042 SUB sE, 01
+043 XOR sE, FF
+044 pos_add: ADD sC, sE
+045 ADDCY sD, 00
+046 end_isr: STORE sB, COUNTER_256
+047 STORE sC, SUM0
+048 STORE sD, SUM1
+049 FETCH sB, ISR_preserve_sB;restore registers
+04A FETCH sC, ISR_preserve_sC
+04B FETCH sD, ISR_preserve_sD
+04C FETCH sE, ISR_preserve_sE
+04D RETURNI ENABLE
+04E ;Interrupt Vector
 3FF ADDRESS 3FF
 3FF JUMP ISR
 

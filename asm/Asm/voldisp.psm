@@ -1,7 +1,7 @@
                 ; Port definitions
 
                     CONSTANT LED_port, 80
-                    CONSTANT LED_accumulator_port, 90
+                    CONSTANT LED_accumulator_port, 40
                     CONSTANT DATA_IN_PORT, 00
 
                 ; Special Register Usage
@@ -129,7 +129,12 @@
                     LOAD sD, 00
 
     accumulator_add:INPUT sE, DATA_IN_PORT
-                    ADDCY sC, sE
+                    COMPARE sE, 00
+                    JUMP NC, pos_add
+                    SUB sE, 01
+                    XOR sE, FF
+                    
+        pos_add:    ADD sC, sE
                     ADDCY sD, 00
 
         end_isr:    STORE sB, COUNTER_256

@@ -29,7 +29,8 @@ module music_fetcher
     output logic    [BYTEENABLE_WIDTH - 1:0]    flash_mem_byteenable,
     output logic    [ADDR_WIDTH - 1:0]          flash_mem_address,
     /* Audio data output*/
-    output logic    [AUDIO_DATA_WIDTH - 1:0]    audio_data                  /* Audio data output */
+    output logic    [AUDIO_DATA_WIDTH - 1:0]    audio_data,                  /* Audio data output */
+    output logic                                audio_ready
     /* All outputs are synchronized to clk_50. */
 );
 
@@ -50,6 +51,7 @@ module music_fetcher
 
     /* FSM Outputs */
     assign flash_mem_address = state[STATE_WIDTH - 1:FSM_OUT_WIDTH];    /* 23 bits */
+    assign audio_ready = state[3];
     /* state[3:2] uniquely identifies state*/                           /* 2 bits */
     /* ~state[1] determines whether music is being paused          	    /* 1 bit  */
     assign flash_mem_read = state[0];                                   /* 1 bit  */

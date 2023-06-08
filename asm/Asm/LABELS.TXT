@@ -21,4 +21,5 @@ Table of addresses and their specified labels.
 038  shift_left
 03C  output_sum
 03F  accumulator_add
-042  end_isr
+044  pos_add
+046  end_isr
