@@ -30,7 +30,7 @@ STORE sB, COUNTER_256               ;initialize to FF, so overflows and outputs 
 STORE sC, SUM0              ;initialize to 0
 STORE sC, SUM1
 OUTPUT sA, LED_port                 ;turn on LED
-OUTPUT sB, LED_accumulator_port     ;set accumulator display to 00
+OUTPUT sC, LED_accumulator_port     ;set accumulator display to 00
 ENABLE INTERRUPT
 ; Main Program
 main_program:   CALL delay_1s
@@ -113,8 +113,8 @@ output_sum: OUTPUT sE, LED_accumulator_port     ;if overflow, output and rst acc
 LOAD sC, 00
 LOAD sD, 00
 accumulator_add:INPUT sE, DATA_IN_PORT
-COMPARE sE, 00
-JUMP NC, pos_add
+TEST sE, 80
+JUMP Z, pos_add
 SUB sE, 01
 XOR sE, FF
 pos_add:    ADD sC, sE
@@ -159,7 +159,7 @@ STORE sB, COUNTER_256;initialize to FF, so overflows and outputs 0 right away
 STORE sC, SUM0;initialize to 0
 STORE sC, SUM1
 OUTPUT sA, LED_port;turn on LED
-OUTPUT sB, LED_accumulator_port;set accumulator display to 00
+OUTPUT sC, LED_accumulator_port;set accumulator display to 00
 ENABLE INTERRUPT
 ; Main Program
 main_program: CALL delay_1s
@@ -242,8 +242,8 @@ output_sum: OUTPUT sE, LED_accumulator_port;if overflow, output and rst accumula
 LOAD sC, 00
 LOAD sD, 00
 accumulator_add: INPUT sE, DATA_IN_PORT
-COMPARE sE, 00
-JUMP NC, pos_add
+TEST sE, 80
+JUMP Z, pos_add
 SUB sE, 01
 XOR sE, FF
 pos_add: ADD sC, sE
@@ -289,7 +289,7 @@ STORE sB, COUNTER_256;initialize to FF, so overflows and outputs 0 right away
 004 STORE sC, SUM0;initialize to 0
 005 STORE sC, SUM1
 006 OUTPUT sA, LED_port;turn on LED
-007 OUTPUT sB, LED_accumulator_port;set accumulator display to 00
+007 OUTPUT sC, LED_accumulator_port;set accumulator display to 00
 008 ENABLE INTERRUPT
 009 ; Main Program
 009 main_program: CALL delay_1s
@@ -373,8 +373,8 @@ output_sum: OUTPUT sE, LED_accumulator_port;if overflow, output and rst accumula
 03D LOAD sC, 00
 03E LOAD sD, 00
 03F accumulator_add: INPUT sE, DATA_IN_PORT
-040 COMPARE sE, 00
-041 JUMP NC, pos_add
+040 TEST sE, 80
+041 JUMP Z, pos_add
 042 SUB sE, 01
 043 XOR sE, FF
 044 pos_add: ADD sC, sE
@@ -420,7 +420,7 @@ STORE sB, COUNTER_256;initialize to FF, so overflows and outputs 0 right away
 004 STORE sC, SUM0;initialize to 0
 005 STORE sC, SUM1
 006 OUTPUT sA, LED_port;turn on LED
-007 OUTPUT sB, LED_accumulator_port;set accumulator display to 00
+007 OUTPUT sC, LED_accumulator_port;set accumulator display to 00
 008 ENABLE INTERRUPT
 009 ; Main Program
 009 main_program: CALL delay_1s
@@ -504,8 +504,8 @@ output_sum: OUTPUT sE, LED_accumulator_port;if overflow, output and rst accumula
 03D LOAD sC, 00
 03E LOAD sD, 00
 03F accumulator_add: INPUT sE, DATA_IN_PORT
-040 COMPARE sE, 00
-041 JUMP NC, pos_add
+040 TEST sE, 80
+041 JUMP Z, pos_add
 042 SUB sE, 01
 043 XOR sE, FF
 044 pos_add: ADD sC, sE

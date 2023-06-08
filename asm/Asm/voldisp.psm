@@ -34,7 +34,7 @@
                     STORE sC, SUM0              ;initialize to 0
                     STORE sC, SUM1            
                     OUTPUT sA, LED_port                 ;turn on LED
-                    OUTPUT sB, LED_accumulator_port     ;set accumulator display to 00
+                    OUTPUT sC, LED_accumulator_port     ;set accumulator display to 00
 
                     ENABLE INTERRUPT
                 
@@ -129,8 +129,8 @@
                     LOAD sD, 00
 
     accumulator_add:INPUT sE, DATA_IN_PORT
-                    COMPARE sE, 00
-                    JUMP NC, pos_add
+                    TEST sE, 80
+                    JUMP Z, pos_add
                     SUB sE, 01
                     XOR sE, FF
                     
