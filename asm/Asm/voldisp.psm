@@ -1,3 +1,8 @@
+; About this assembly program. 
+; A module to accumulate sound values and to compute their average.
+; Displays it on LEDs as in lab spec
+; Interfaces with voldisp module                
+                               
                 ; Port definitions
 
                     CONSTANT LED_port, 80
