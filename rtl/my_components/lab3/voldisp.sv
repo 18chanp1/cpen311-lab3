@@ -1,17 +1,21 @@
 `define USE_PACOBLAZE
 
+/* A module to accumulate sound values and to compute their average.
+   Displays it on LEDs as in lab spec*/ 
 module voldisp
 #(
-    parameter MUSIC_IN_PORT = 8'h00,
+    parameter MUSIC_IN_PORT = 8'h00,        /* Input / Output set in the instructions*/
     parameter LED_1S_PORT = 8'h80,
     parameter LED_VOL_PORT = 8'h40
 )
 (
     input logic         clk, 
-    input logic         read_interrupt,
-    input logic  [7:0]  music_data,
-    output logic [7:0]  LED_volume,
-    output logic        LED_1s
+    input logic         read_interrupt,     /*Interrupt signal to read sample, set to 1 when music_data is ready*/
+                                            /* every 22khz*/
+    input logic  [7:0]  music_data,         /* Music data */
+    output logic [7:0]  LED_volume,         /* Output to display volume on LEDs */
+    output logic        LED_1s              /* One second flasher*/
+    /* All inputs synchronous to clk*/
 );
 
     /*Instantiate pacoblaze processor*/
@@ -41,7 +45,7 @@ module voldisp
         .clk(clk)
     );
 
-    /*Set connect interrupt wire from flash FSM*/
+    /*Connect interrupt wire from flash FSM, reset after acknowledged*/
     always_ff @(posedge clk, posedge interrupt_ack)
     begin
         if(interrupt_ack)   interrupt <= 1'b0;
@@ -51,12 +55,14 @@ module voldisp
     /* Instruction memory fetcher instantiation*/
     logic [17:0] raw_instruction;
 
+    /* Instantiate instruction memory*/
     pacoblaze_instruction_memory voldisp_pacoblaze_fetcher
     (
         .addr(address),
         .outdata(raw_instruction)
     );
 
+    /* Register instructions from instruction memory module*/
     always_ff @(posedge clk)
     begin
         instruction <= raw_instruction;
