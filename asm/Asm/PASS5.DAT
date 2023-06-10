@@ -7,6 +7,46 @@ INSTRUCTION-
   OP1 VALUE-
    OPERAND2-
   OP2 VALUE-
+    COMMENT-; About this assembly program.
+    ADDRESS-000
+      LABEL-
+  FORMATTED-
+  LOGFORMAT-
+INSTRUCTION-
+   OPERAND1-
+  OP1 VALUE-
+   OPERAND2-
+  OP2 VALUE-
+    COMMENT-; A module to accumulate sound values and to compute their average.
+    ADDRESS-000
+      LABEL-
+  FORMATTED-
+  LOGFORMAT-
+INSTRUCTION-
+   OPERAND1-
+  OP1 VALUE-
+   OPERAND2-
+  OP2 VALUE-
+    COMMENT-; Displays it on LEDs as in lab spec
+    ADDRESS-000
+      LABEL-
+  FORMATTED-
+  LOGFORMAT-
+INSTRUCTION-
+   OPERAND1-
+  OP1 VALUE-
+   OPERAND2-
+  OP2 VALUE-
+    COMMENT-; Interfaces with voldisp module
+    ADDRESS-000
+      LABEL-
+  FORMATTED-
+  LOGFORMAT-
+INSTRUCTION-
+   OPERAND1-
+  OP1 VALUE-
+   OPERAND2-
+  OP2 VALUE-
     COMMENT-; Port definitions
     ADDRESS-000
       LABEL-
@@ -917,7 +957,7 @@ INSTRUCTION-STORE
   OP1 VALUE-sB
    OPERAND2-ISR_preserve_sB
   OP2 VALUE-00
-    COMMENT-
+    COMMENT-;Preserve registers
     ADDRESS-02F
       LABEL-
   FORMATTED-STORE sC, ISR_preserve_sC
@@ -957,7 +997,7 @@ INSTRUCTION-FETCH
   OP1 VALUE-sB
    OPERAND2-COUNTER_256
   OP2 VALUE-05
-    COMMENT-
+    COMMENT-;Get counter values
     ADDRESS-033
       LABEL-
   FORMATTED-FETCH sC, SUM0
@@ -1007,7 +1047,7 @@ INSTRUCTION-LOAD
   OP1 VALUE-sE
    OPERAND2-FF
   OP2 VALUE-FF
-    COMMENT-
+    COMMENT-;start with all ones, all LEDs from left illuminated
     ADDRESS-038
       LABEL-shift_left
   FORMATTED-SL0 sD
@@ -1017,7 +1057,7 @@ INSTRUCTION-SL0
   OP1 VALUE-sD
    OPERAND2-
   OP2 VALUE-
-    COMMENT-;loop until all bits shifted away
+    COMMENT-;Shift into carry
     ADDRESS-039
       LABEL-
   FORMATTED-JUMP C, output_sum
@@ -1027,7 +1067,7 @@ INSTRUCTION-JUMP
   OP1 VALUE-C
    OPERAND2-output_sum
   OP2 VALUE-03C
-    COMMENT-
+    COMMENT-;MSB shifted into carry, if still 0 continue shifting
     ADDRESS-03A
       LABEL-
   FORMATTED-SL0 sE
@@ -1037,7 +1077,7 @@ INSTRUCTION-SL0
   OP1 VALUE-sE
    OPERAND2-
   OP2 VALUE-
-    COMMENT-
+    COMMENT-;shift a 0 in sE to reduce volume by one
     ADDRESS-03B
       LABEL-
   FORMATTED-JUMP NZ, shift_left
@@ -1047,7 +1087,7 @@ INSTRUCTION-JUMP
   OP1 VALUE-NZ
    OPERAND2-shift_left
   OP2 VALUE-038
-    COMMENT-
+    COMMENT-;Repeat while volume is larger than 0.
     ADDRESS-03C
       LABEL-output_sum
   FORMATTED-OUTPUT sE, LED_accumulator_port
@@ -1057,7 +1097,7 @@ INSTRUCTION-OUTPUT
   OP1 VALUE-sE
    OPERAND2-LED_accumulator_port
   OP2 VALUE-40
-    COMMENT-;if overflow, output and rst accumulator
+    COMMENT-;if overflow(256 samples), output
     ADDRESS-03D
       LABEL-
   FORMATTED-LOAD sC, 00
@@ -1067,7 +1107,7 @@ INSTRUCTION-LOAD
   OP1 VALUE-sC
    OPERAND2-00
   OP2 VALUE-00
-    COMMENT-
+    COMMENT-;Reset accumulator to 0.
     ADDRESS-03E
       LABEL-
   FORMATTED-LOAD sD, 00
@@ -1087,7 +1127,7 @@ INSTRUCTION-INPUT
   OP1 VALUE-sE
    OPERAND2-DATA_IN_PORT
   OP2 VALUE-00
-    COMMENT-
+    COMMENT-;Load data in
     ADDRESS-040
       LABEL-
   FORMATTED-TEST sE, 80
@@ -1097,7 +1137,7 @@ INSTRUCTION-TEST
   OP1 VALUE-sE
    OPERAND2-80
   OP2 VALUE-80
-    COMMENT-
+    COMMENT-;check if negative
     ADDRESS-041
       LABEL-
   FORMATTED-JUMP Z, pos_add
@@ -1107,7 +1147,7 @@ INSTRUCTION-JUMP
   OP1 VALUE-Z
    OPERAND2-pos_add
   OP2 VALUE-044
-    COMMENT-
+    COMMENT-;Take the absolute value
     ADDRESS-042
       LABEL-
   FORMATTED-SUB sE, 01
@@ -1117,7 +1157,7 @@ INSTRUCTION-SUB
   OP1 VALUE-sE
    OPERAND2-01
   OP2 VALUE-01
-    COMMENT-
+    COMMENT-;Negate if negative
     ADDRESS-043
       LABEL-
   FORMATTED-XOR sE, FF
@@ -1137,7 +1177,7 @@ INSTRUCTION-ADD
   OP1 VALUE-sC
    OPERAND2-sE
   OP2 VALUE-sE
-    COMMENT-
+    COMMENT-;Add new value to the sum
     ADDRESS-045
       LABEL-
   FORMATTED-ADDCY sD, 00
@@ -1157,7 +1197,7 @@ INSTRUCTION-STORE
   OP1 VALUE-sB
    OPERAND2-COUNTER_256
   OP2 VALUE-05
-    COMMENT-
+    COMMENT-;Save counter and accumulator
     ADDRESS-047
       LABEL-
   FORMATTED-STORE sC, SUM0

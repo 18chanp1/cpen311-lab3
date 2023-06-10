@@ -2,6 +2,26 @@
 INSTRUCTION-
    OPERAND1-
    OPERAND2-
+    COMMENT-; About this assembly program.
+      LABEL-
+INSTRUCTION-
+   OPERAND1-
+   OPERAND2-
+    COMMENT-; A module to accumulate sound values and to compute their average.
+      LABEL-
+INSTRUCTION-
+   OPERAND1-
+   OPERAND2-
+    COMMENT-; Displays it on LEDs as in lab spec
+      LABEL-
+INSTRUCTION-
+   OPERAND1-
+   OPERAND2-
+    COMMENT-; Interfaces with voldisp module
+      LABEL-
+INSTRUCTION-
+   OPERAND1-
+   OPERAND2-
     COMMENT-; Port definitions
       LABEL-
 INSTRUCTION-CONSTANT
@@ -457,7 +477,7 @@ INSTRUCTION-
 INSTRUCTION-STORE
    OPERAND1-sB
    OPERAND2-ISR_preserve_sB
-    COMMENT-
+    COMMENT-;Preserve registers
       LABEL-
 INSTRUCTION-STORE
    OPERAND1-sC
@@ -477,7 +497,7 @@ INSTRUCTION-STORE
 INSTRUCTION-FETCH
    OPERAND1-sB
    OPERAND2-COUNTER_256
-    COMMENT-
+    COMMENT-;Get counter values
       LABEL-
 INSTRUCTION-FETCH
    OPERAND1-sC
@@ -502,37 +522,37 @@ INSTRUCTION-JUMP
 INSTRUCTION-LOAD
    OPERAND1-sE
    OPERAND2-FF
-    COMMENT-
+    COMMENT-;start with all ones, all LEDs from left illuminated
       LABEL-shift_left
 INSTRUCTION-SL0
    OPERAND1-sD
    OPERAND2-
-    COMMENT-;loop until all bits shifted away
+    COMMENT-;Shift into carry
       LABEL-
 INSTRUCTION-JUMP
    OPERAND1-C
    OPERAND2-output_sum
-    COMMENT-
+    COMMENT-;MSB shifted into carry, if still 0 continue shifting
       LABEL-
 INSTRUCTION-SL0
    OPERAND1-sE
    OPERAND2-
-    COMMENT-
+    COMMENT-;shift a 0 in sE to reduce volume by one
       LABEL-
 INSTRUCTION-JUMP
    OPERAND1-NZ
    OPERAND2-shift_left
-    COMMENT-
+    COMMENT-;Repeat while volume is larger than 0.
       LABEL-output_sum
 INSTRUCTION-OUTPUT
    OPERAND1-sE
    OPERAND2-LED_accumulator_port
-    COMMENT-;if overflow, output and rst accumulator
+    COMMENT-;if overflow(256 samples), output
       LABEL-
 INSTRUCTION-LOAD
    OPERAND1-sC
    OPERAND2-00
-    COMMENT-
+    COMMENT-;Reset accumulator to 0.
       LABEL-
 INSTRUCTION-LOAD
    OPERAND1-sD
@@ -542,22 +562,22 @@ INSTRUCTION-LOAD
 INSTRUCTION-INPUT
    OPERAND1-sE
    OPERAND2-DATA_IN_PORT
-    COMMENT-
+    COMMENT-;Load data in
       LABEL-
 INSTRUCTION-TEST
    OPERAND1-sE
    OPERAND2-80
-    COMMENT-
+    COMMENT-;check if negative
       LABEL-
 INSTRUCTION-JUMP
    OPERAND1-Z
    OPERAND2-pos_add
-    COMMENT-
+    COMMENT-;Take the absolute value
       LABEL-
 INSTRUCTION-SUB
    OPERAND1-sE
    OPERAND2-01
-    COMMENT-
+    COMMENT-;Negate if negative
       LABEL-
 INSTRUCTION-XOR
    OPERAND1-sE
@@ -567,7 +587,7 @@ INSTRUCTION-XOR
 INSTRUCTION-ADD
    OPERAND1-sC
    OPERAND2-sE
-    COMMENT-
+    COMMENT-;Add new value to the sum
       LABEL-
 INSTRUCTION-ADDCY
    OPERAND1-sD
@@ -577,7 +597,7 @@ INSTRUCTION-ADDCY
 INSTRUCTION-STORE
    OPERAND1-sB
    OPERAND2-COUNTER_256
-    COMMENT-
+    COMMENT-;Save counter and accumulator
       LABEL-
 INSTRUCTION-STORE
    OPERAND1-sC

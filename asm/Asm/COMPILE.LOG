@@ -4,6 +4,10 @@ The assembler for KCPSM3 Programmable State Machine
 
 PASS 1 - Reading input PSM file
 
+; About this assembly program.
+; A module to accumulate sound values and to compute their average.
+; Displays it on LEDs as in lab spec
+; Interfaces with voldisp module
 ; Port definitions
 CONSTANT LED_port, 80
 CONSTANT LED_accumulator_port, 40
@@ -42,8 +46,8 @@ add:   ADD sA, 01              ;sA != 01
 set_led:   OUTPUT sA, LED_port
 JUMP main_program
 ; Routines for software delays, borrowed from in-class activity
-delay_1us: LOAD s0, delay_1us_constant
-wait_1us: SUB s0, 01
+delay_1us:  LOAD s0, delay_1us_constant
+wait_1us:  SUB s0, 01
 JUMP NZ, wait_1us
 RETURN
 ;
@@ -51,7 +55,7 @@ RETURN
 ;
 ; Registers used s0, s1
 ;
-delay_40us: LOAD s1, 28                         ;40 x 1us = 40us
+delay_40us:   LOAD s1, 28                         ;40 x 1us = 40us
 wait_40us: CALL delay_1us
 SUB s1, 01
 JUMP NZ, wait_40us
@@ -95,31 +99,31 @@ SUB s4, 01
 JUMP NZ, wait_1s
 RETURN
 ;ISR Routine
-ISR:    STORE sB, ISR_preserve_sB
+ISR:   STORE sB, ISR_preserve_sB           ;Preserve registers
 STORE sC, ISR_preserve_sC
 STORE sD, ISR_preserve_sD
 STORE sE, ISR_preserve_sE
-FETCH sB, COUNTER_256
+FETCH sB, COUNTER_256               ;Get counter values
 FETCH sC, SUM0
 FETCH sD, SUM1
-ADD sB, 01                           ;increment counter
+ADD sB, 01                          ;increment counter
 JUMP NC, accumulator_add            ;when overflow, is 256
-LOAD sE, FF
-shift_left: SL0 sD                               ;loop until all bits shifted away
-JUMP C, output_sum
-SL0 sE
-JUMP NZ, shift_left
-output_sum: OUTPUT sE, LED_accumulator_port     ;if overflow, output and rst accumulator
-LOAD sC, 00
+LOAD sE, FF                         ;start with all ones, all LEDs from left illuminated
+shift_left:   SL0 sD                              ;Shift into carry
+JUMP C, output_sum                  ;MSB shifted into carry, if still 0 continue shifting
+SL0 sE                              ;shift a 0 in sE to reduce volume by one
+JUMP NZ, shift_left                 ;Repeat while volume is larger than 0.
+output_sum:   OUTPUT sE, LED_accumulator_port     ;if overflow(256 samples), output
+LOAD sC, 00                         ;Reset accumulator to 0.
 LOAD sD, 00
-accumulator_add:INPUT sE, DATA_IN_PORT
-TEST sE, 80
-JUMP Z, pos_add
-SUB sE, 01
+accumulator_add:   INPUT sE, DATA_IN_PORT              ;Load data in
+TEST sE, 80                         ;check if negative
+JUMP Z, pos_add                     ;Take the absolute value
+SUB sE, 01                          ;Negate if negative
 XOR sE, FF
-pos_add:    ADD sC, sE
+pos_add:   ADD sC, sE                          ;Add new value to the sum
 ADDCY sD, 00
-end_isr:    STORE sB, COUNTER_256
+end_isr:    STORE sB, COUNTER_256               ;Save counter and accumulator
 STORE sC, SUM0
 STORE sD, SUM1
 FETCH sB, ISR_preserve_sB           ;restore registers
@@ -133,6 +137,10 @@ JUMP ISR
 
 PASS 2 - Testing Instructions
 
+; About this assembly program.
+; A module to accumulate sound values and to compute their average.
+; Displays it on LEDs as in lab spec
+; Interfaces with voldisp module
 ; Port definitions
 CONSTANT LED_port, 80
 CONSTANT LED_accumulator_port, 40
@@ -224,31 +232,31 @@ SUB s4, 01
 JUMP NZ, wait_1s
 RETURN
 ;ISR Routine
-ISR: STORE sB, ISR_preserve_sB
+ISR: STORE sB, ISR_preserve_sB;Preserve registers
 STORE sC, ISR_preserve_sC
 STORE sD, ISR_preserve_sD
 STORE sE, ISR_preserve_sE
-FETCH sB, COUNTER_256
+FETCH sB, COUNTER_256;Get counter values
 FETCH sC, SUM0
 FETCH sD, SUM1
 ADD sB, 01;increment counter
 JUMP NC, accumulator_add;when overflow, is 256
-LOAD sE, FF
-shift_left: SL0 sD;loop until all bits shifted away
-JUMP C, output_sum
-SL0 sE
-JUMP NZ, shift_left
-output_sum: OUTPUT sE, LED_accumulator_port;if overflow, output and rst accumulator
-LOAD sC, 00
+LOAD sE, FF;start with all ones, all LEDs from left illuminated
+shift_left: SL0 sD;Shift into carry
+JUMP C, output_sum;MSB shifted into carry, if still 0 continue shifting
+SL0 sE;shift a 0 in sE to reduce volume by one
+JUMP NZ, shift_left;Repeat while volume is larger than 0.
+output_sum: OUTPUT sE, LED_accumulator_port;if overflow(256 samples), output
+LOAD sC, 00;Reset accumulator to 0.
 LOAD sD, 00
-accumulator_add: INPUT sE, DATA_IN_PORT
-TEST sE, 80
-JUMP Z, pos_add
-SUB sE, 01
+accumulator_add: INPUT sE, DATA_IN_PORT;Load data in
+TEST sE, 80;check if negative
+JUMP Z, pos_add;Take the absolute value
+SUB sE, 01;Negate if negative
 XOR sE, FF
-pos_add: ADD sC, sE
+pos_add: ADD sC, sE;Add new value to the sum
 ADDCY sD, 00
-end_isr: STORE sB, COUNTER_256
+end_isr: STORE sB, COUNTER_256;Save counter and accumulator
 STORE sC, SUM0
 STORE sD, SUM1
 FETCH sB, ISR_preserve_sB;restore registers
@@ -262,6 +270,10 @@ JUMP ISR
 
 PASS 3 - Resolving addresses and line labels
 
+000 ; About this assembly program.
+000 ; A module to accumulate sound values and to compute their average.
+000 ; Displays it on LEDs as in lab spec
+000 ; Interfaces with voldisp module
 000 ; Port definitions
 000 CONSTANT LED_port, 80
 000 CONSTANT LED_accumulator_port, 40
@@ -354,32 +366,31 @@ STORE sB, COUNTER_256;initialize to FF, so overflows and outputs 0 right away
 02C JUMP NZ, wait_1s
 02D RETURN
 02E ;ISR Routine
-02E ISR: STORE sB, ISR_preserve_sB
+02E ISR: STORE sB, ISR_preserve_sB;Preserve registers
 02F STORE sC, ISR_preserve_sC
 030 STORE sD, ISR_preserve_sD
 031 STORE sE, ISR_preserve_sE
-032 FETCH sB, COUNTER_256
+032 FETCH sB, COUNTER_256;Get counter values
 033 FETCH sC, SUM0
 034 FETCH sD, SUM1
 035 ADD sB, 01;increment counter
 036 JUMP NC, accumulator_add;when overflow, is 256
-037 LOAD sE, FF
-038 shift_left: SL0 sD;loop until all bits shifted away
-039 JUMP C, output_sum
-03A SL0 sE
-03B JUMP NZ, shift_left
-03C 
-output_sum: OUTPUT sE, LED_accumulator_port;if overflow, output and rst accumulator
-03D LOAD sC, 00
+037 LOAD sE, FF;start with all ones, all LEDs from left illuminated
+038 shift_left: SL0 sD;Shift into carry
+039 JUMP C, output_sum;MSB shifted into carry, if still 0 continue shifting
+03A SL0 sE;shift a 0 in sE to reduce volume by one
+03B JUMP NZ, shift_left;Repeat while volume is larger than 0.
+03C output_sum: OUTPUT sE, LED_accumulator_port;if overflow(256 samples), output
+03D LOAD sC, 00;Reset accumulator to 0.
 03E LOAD sD, 00
-03F accumulator_add: INPUT sE, DATA_IN_PORT
-040 TEST sE, 80
-041 JUMP Z, pos_add
-042 SUB sE, 01
+03F accumulator_add: INPUT sE, DATA_IN_PORT;Load data in
+040 TEST sE, 80;check if negative
+041 JUMP Z, pos_add;Take the absolute value
+042 SUB sE, 01;Negate if negative
 043 XOR sE, FF
-044 pos_add: ADD sC, sE
+044 pos_add: ADD sC, sE;Add new value to the sum
 045 ADDCY sD, 00
-046 end_isr: STORE sB, COUNTER_256
+046 end_isr: STORE sB, COUNTER_256;Save counter and accumulator
 047 STORE sC, SUM0
 048 STORE sD, SUM1
 049 FETCH sB, ISR_preserve_sB;restore registers
@@ -393,6 +404,10 @@ output_sum: OUTPUT sE, LED_accumulator_port;if overflow, output and rst accumula
 
 PASS 4 - Resolving Operands
 
+000 ; About this assembly program.
+000 ; A module to accumulate sound values and to compute their average.
+000 ; Displays it on LEDs as in lab spec
+000 ; Interfaces with voldisp module
 000 ; Port definitions
 000 CONSTANT LED_port, 80
 000 CONSTANT LED_accumulator_port, 40
@@ -485,32 +500,31 @@ STORE sB, COUNTER_256;initialize to FF, so overflows and outputs 0 right away
 02C JUMP NZ, wait_1s
 02D RETURN
 02E ;ISR Routine
-02E ISR: STORE sB, ISR_preserve_sB
+02E ISR: STORE sB, ISR_preserve_sB;Preserve registers
 02F STORE sC, ISR_preserve_sC
 030 STORE sD, ISR_preserve_sD
 031 STORE sE, ISR_preserve_sE
-032 FETCH sB, COUNTER_256
+032 FETCH sB, COUNTER_256;Get counter values
 033 FETCH sC, SUM0
 034 FETCH sD, SUM1
 035 ADD sB, 01;increment counter
 036 JUMP NC, accumulator_add;when overflow, is 256
-037 LOAD sE, FF
-038 shift_left: SL0 sD;loop until all bits shifted away
-039 JUMP C, output_sum
-03A SL0 sE
-03B JUMP NZ, shift_left
-03C 
-output_sum: OUTPUT sE, LED_accumulator_port;if overflow, output and rst accumulator
-03D LOAD sC, 00
+037 LOAD sE, FF;start with all ones, all LEDs from left illuminated
+038 shift_left: SL0 sD;Shift into carry
+039 JUMP C, output_sum;MSB shifted into carry, if still 0 continue shifting
+03A SL0 sE;shift a 0 in sE to reduce volume by one
+03B JUMP NZ, shift_left;Repeat while volume is larger than 0.
+03C output_sum: OUTPUT sE, LED_accumulator_port;if overflow(256 samples), output
+03D LOAD sC, 00;Reset accumulator to 0.
 03E LOAD sD, 00
-03F accumulator_add: INPUT sE, DATA_IN_PORT
-040 TEST sE, 80
-041 JUMP Z, pos_add
-042 SUB sE, 01
+03F accumulator_add: INPUT sE, DATA_IN_PORT;Load data in
+040 TEST sE, 80;check if negative
+041 JUMP Z, pos_add;Take the absolute value
+042 SUB sE, 01;Negate if negative
 043 XOR sE, FF
-044 pos_add: ADD sC, sE
+044 pos_add: ADD sC, sE;Add new value to the sum
 045 ADDCY sD, 00
-046 end_isr: STORE sB, COUNTER_256
+046 end_isr: STORE sB, COUNTER_256;Save counter and accumulator
 047 STORE sC, SUM0
 048 STORE sD, SUM1
 049 FETCH sB, ISR_preserve_sB;restore registers

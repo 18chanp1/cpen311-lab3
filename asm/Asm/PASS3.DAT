@@ -3,6 +3,30 @@
 INSTRUCTION-
    OPERAND1-
    OPERAND2-
+    COMMENT-; About this assembly program.
+    ADDRESS-000
+      LABEL-
+INSTRUCTION-
+   OPERAND1-
+   OPERAND2-
+    COMMENT-; A module to accumulate sound values and to compute their average.
+    ADDRESS-000
+      LABEL-
+INSTRUCTION-
+   OPERAND1-
+   OPERAND2-
+    COMMENT-; Displays it on LEDs as in lab spec
+    ADDRESS-000
+      LABEL-
+INSTRUCTION-
+   OPERAND1-
+   OPERAND2-
+    COMMENT-; Interfaces with voldisp module
+    ADDRESS-000
+      LABEL-
+INSTRUCTION-
+   OPERAND1-
+   OPERAND2-
     COMMENT-; Port definitions
     ADDRESS-000
       LABEL-
@@ -549,7 +573,7 @@ INSTRUCTION-
 INSTRUCTION-STORE
    OPERAND1-sB
    OPERAND2-ISR_preserve_sB
-    COMMENT-
+    COMMENT-;Preserve registers
     ADDRESS-02F
       LABEL-
 INSTRUCTION-STORE
@@ -573,7 +597,7 @@ INSTRUCTION-STORE
 INSTRUCTION-FETCH
    OPERAND1-sB
    OPERAND2-COUNTER_256
-    COMMENT-
+    COMMENT-;Get counter values
     ADDRESS-033
       LABEL-
 INSTRUCTION-FETCH
@@ -603,43 +627,43 @@ INSTRUCTION-JUMP
 INSTRUCTION-LOAD
    OPERAND1-sE
    OPERAND2-FF
-    COMMENT-
+    COMMENT-;start with all ones, all LEDs from left illuminated
     ADDRESS-038
       LABEL-shift_left
 INSTRUCTION-SL0
    OPERAND1-sD
    OPERAND2-
-    COMMENT-;loop until all bits shifted away
+    COMMENT-;Shift into carry
     ADDRESS-039
       LABEL-
 INSTRUCTION-JUMP
    OPERAND1-C
    OPERAND2-output_sum
-    COMMENT-
+    COMMENT-;MSB shifted into carry, if still 0 continue shifting
     ADDRESS-03A
       LABEL-
 INSTRUCTION-SL0
    OPERAND1-sE
    OPERAND2-
-    COMMENT-
+    COMMENT-;shift a 0 in sE to reduce volume by one
     ADDRESS-03B
       LABEL-
 INSTRUCTION-JUMP
    OPERAND1-NZ
    OPERAND2-shift_left
-    COMMENT-
+    COMMENT-;Repeat while volume is larger than 0.
     ADDRESS-03C
       LABEL-output_sum
 INSTRUCTION-OUTPUT
    OPERAND1-sE
    OPERAND2-LED_accumulator_port
-    COMMENT-;if overflow, output and rst accumulator
+    COMMENT-;if overflow(256 samples), output
     ADDRESS-03D
       LABEL-
 INSTRUCTION-LOAD
    OPERAND1-sC
    OPERAND2-00
-    COMMENT-
+    COMMENT-;Reset accumulator to 0.
     ADDRESS-03E
       LABEL-
 INSTRUCTION-LOAD
@@ -651,25 +675,25 @@ INSTRUCTION-LOAD
 INSTRUCTION-INPUT
    OPERAND1-sE
    OPERAND2-DATA_IN_PORT
-    COMMENT-
+    COMMENT-;Load data in
     ADDRESS-040
       LABEL-
 INSTRUCTION-TEST
    OPERAND1-sE
    OPERAND2-80
-    COMMENT-
+    COMMENT-;check if negative
     ADDRESS-041
       LABEL-
 INSTRUCTION-JUMP
    OPERAND1-Z
    OPERAND2-pos_add
-    COMMENT-
+    COMMENT-;Take the absolute value
     ADDRESS-042
       LABEL-
 INSTRUCTION-SUB
    OPERAND1-sE
    OPERAND2-01
-    COMMENT-
+    COMMENT-;Negate if negative
     ADDRESS-043
       LABEL-
 INSTRUCTION-XOR
@@ -681,7 +705,7 @@ INSTRUCTION-XOR
 INSTRUCTION-ADD
    OPERAND1-sC
    OPERAND2-sE
-    COMMENT-
+    COMMENT-;Add new value to the sum
     ADDRESS-045
       LABEL-
 INSTRUCTION-ADDCY
@@ -693,7 +717,7 @@ INSTRUCTION-ADDCY
 INSTRUCTION-STORE
    OPERAND1-sB
    OPERAND2-COUNTER_256
-    COMMENT-
+    COMMENT-;Save counter and accumulator
     ADDRESS-047
       LABEL-
 INSTRUCTION-STORE
